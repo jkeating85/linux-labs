@@ -1,7 +1,7 @@
 # Linux Fundamentals — Users & Groups
 
 ## Objective
-Demonstrate practical understanding of Linux user and group management, ownership, and access control using core administrative commands.
+Demonstrate practical understanding of Linux user and group management by creating users, modifying group membership, adjusting file and directory ownership, configuring permissions, and validating access behavior in a multi-user environment.
 
 ---
 
