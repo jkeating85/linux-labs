@@ -33,7 +33,13 @@ Demonstrate practical understanding of Linux user and group management, ownershi
 - `chown <user>:<group> <file>` — Changes file ownership (user and/or group).
 
 - `ls -l` — Displays file permissions, owner, and group.
+  
+- `chgrp <group> <file/directory>` — Changes the group ownership of a file or directory.
+- `chmod <permissions> <file/directory>` — Modifies file or directory permissions.
+- `ls -ld <directory>` — Displays directory permissions, owner, and group.
+- `su - <user>` — Switches to another user account to test access behavior.
 
+---
 ---
 
 ## What Was Tested
