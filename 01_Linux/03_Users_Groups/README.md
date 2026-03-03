@@ -68,6 +68,8 @@ Demonstrate practical understanding of Linux user and group management by creati
 
 ---
 
+
+
 ## Visual Evidence
 
 ### Current User Identity
