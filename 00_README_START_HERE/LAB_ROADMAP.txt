@@ -1,0 +1,120 @@
+==============================
+IT LAB MASTER ROADMAP
+==============================
+
+Long-Term Goal:
+Cloud Architect / Cloud Security Architect
+Target: High-paying Remote US role ($250k–$350k+)
+Lifestyle Goal: Strong savings + early retirement option
+
+-----------------------------------
+LEARNING ORDER (DO NOT SKIP STEPS)
+-----------------------------------
+
+1. Linux Fundamentals
+2. Networking Fundamentals
+3. Azure Core Infrastructure
+4. Terraform (Infrastructure as Code)
+5. DevOps (CI/CD, Containers, Kubernetes)
+6. Cloud Security Specialization
+
+-----------------------------------
+FOLDER STRUCTURE EXPLANATION
+-----------------------------------
+
+01_Linux
+- Navigation
+- Permissions
+- Users & Groups
+- Processes
+- Networking
+- Scripting
+
+02_Networking
+- TCP/IP
+- Subnetting
+- Routing
+- DNS
+- Firewalls
+- Load Balancing
+- VPN Concepts
+- Wireshark Labs
+
+03_Azure
+- Core Services
+- Networking
+- Identity (RBAC)
+- Storage
+- Monitoring
+- Cost Management
+- Architecture Design
+
+04_Terraform_IaC
+- Basics
+- Azure Deployments
+- Modules
+- State Management
+- Security
+- Project Builds
+
+05_DevOps_CICD
+- Git
+- GitHub
+- Azure DevOps
+- GitHub Actions
+- Docker
+- Kubernetes
+- CI/CD Pipelines
+
+06_Security
+- Identity & Access
+- Network Security
+- Cloud Security
+- SIEM / Monitoring
+- Incident Response
+- Compliance & Governance
+- Threat Modeling
+
+07_Portfolio_Resume
+- Resume Drafts
+- LinkedIn
+- GitHub Profile
+- Project Writeups
+- Certifications
+- Architecture Diagrams
+
+-----------------------------------
+RULES
+-----------------------------------
+
+1. Every lab must include:
+   - Screenshots
+   - Short write-up (what you built + what you learned)
+
+2. Do NOT rush to certifications.
+   Build skill first.
+
+3. Focus on:
+   - Azure + Terraform + Security depth
+   - Strong fundamentals in Linux & Networking
+
+4. Build real projects.
+   Employers pay for proof, not theory.
+
+-----------------------------------
+FINAL TARGET ROLE PATH
+-----------------------------------
+
+Stage 1: Junior Cloud Engineer
+Stage 2: Cloud Engineer / DevOps Engineer
+Stage 3: Cloud Security Engineer
+Stage 4: Cloud Architect / Cloud Security Architect
+
+Stay consistent.
+No quitting.
+Build depth.
+Document everything.
+
+==============================
+END OF ROADMAP
+==============================
