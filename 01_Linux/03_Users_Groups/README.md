@@ -66,8 +66,12 @@ Demonstrate practical understanding of Linux user and group management, ownershi
 
 See the `Screenshots/` folder for command execution and validation output.
 
----
 
 ## What I Learned
 
-This lab strengthened my understanding of how Linux manages identity and access control through users and groups. I learned how ownership impacts permissions and how to validate access using system files and user inspection commands.
+This lab strengthened my understanding of how Linux enforces access control using users, groups, file ownership, and directory permissions.
+
+I learned that file permissions alone do not determine access — directory execute (`x`) permission is required to enter a directory and access files within it.
+
+Through testing with multiple users, I validated how group membership and ownership changes directly impact access behavior in a multi-user Linux environment.
+
