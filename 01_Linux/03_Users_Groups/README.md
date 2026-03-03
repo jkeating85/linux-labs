@@ -70,7 +70,22 @@ Demonstrate practical understanding of Linux user and group management by creati
 
 ## Visual Evidence
 
-See the `Screenshots/` folder for command execution and validation output.
+### Current User Identity
+![Current User Identity](Screenshots/01-ubuntu-current-identity.png)
+
+### Group Creation
+![Group Creation](Screenshots/04-created-group.png)
+
+### File Ownership Before Change
+![Initial File Ownership](Screenshots/07-initial-file-ownership.png)
+
+### File Ownership After Change
+![Changed File Ownership](Screenshots/08-changed-file-ownership.png)
+
+### Final Access Verification
+![Final Access Verification](Screenshots/09-final-access-verification.png)
+
+
 
 
 ## What I Learned
