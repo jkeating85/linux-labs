@@ -65,12 +65,23 @@ kill PID
 
 ## Visual Evidence
 
-Screenshots demonstrate:
+### Basic Process List
+![Basic Process List](Screenshots/01-basic-process-list.png)
 
-* Process monitoring with `top`
-* Background process creation
-* Job verification with `jobs`
-* Process termination using `kill`
+### All Processes
+![All Processes](Screenshots/02-all-processes.png)
+
+### Process Monitoring with top
+![top command](Screenshots/03-top-monitor.png)
+
+### Background Process
+![Background Process](Screenshots/04-background-process.png)
+
+### Jobs Command
+![Jobs Command](Screenshots/05-jobs-command.png)
+
+### Killing a Process
+![Kill Process](Screenshots/06-kill-process.png)
 
 ## What I Learned
 
