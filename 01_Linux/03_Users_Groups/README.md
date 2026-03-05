@@ -79,7 +79,7 @@ Demonstrate practical understanding of Linux user and group management by creati
 ![Group Creation](Screenshots/04-created-group.png)
 
 ### File Ownership Before Change
-![Initial File Ownership](Screenshots/07-initial-file-ownership.png)
+![Initial File Ownership](Screenshots/07-initial--file-ownership.png)
 
 ### File Ownership After Change
 ![Changed File Ownership](Screenshots/08-changed-file-ownership.png)
