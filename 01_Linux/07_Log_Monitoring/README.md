@@ -69,7 +69,7 @@ Important log analysis tools include:
 
 ### Viewing the Log Directory
 
-![Log Directory](Screenshots/01-var-log-directory.png)
+![Log Directory](Screenshots/01-var-log-list.png)
 
 ### Viewing Recent Log Entries
 
