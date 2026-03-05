@@ -69,11 +69,11 @@ Important log analysis tools include:
 
 ### Viewing the Log Directory
 
-![Log Directory](Screenshots/01-view-log-directory.png)
+![Log Directory](Screenshots/01-var-log-directory.png)
 
 ### Viewing Recent Log Entries
 
-![Recent Logs](Screenshots/02-view-last-log-lines.png)
+![Recent Logs](Screenshots/02-syslog-tail.png)
 
 ### Searching Logs for Errors
 
@@ -85,7 +85,7 @@ Important log analysis tools include:
 
 ### Command Breakdown Example
 
-![Command Explanation](Screenshots/05-command-breakdown.png)
+
 
 ---
 
