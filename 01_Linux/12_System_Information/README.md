@@ -91,7 +91,7 @@ Used `df -h` to examine file system disk space usage.
 
 Used `whoami` to confirm the active logged-in user.
 
----## Real World Usage
+## Real World Usage
 
 System administrators frequently use these commands when connecting to a server for the first time.
 
