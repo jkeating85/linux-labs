@@ -85,13 +85,26 @@ Used `lsblk` to view storage devices and partition layout.
 
 ### Disk Usage
 
-Used `df -h` to examine filesystem disk space usage.
+Used `df -h` to examine file system disk space usage.
 
 ### Current User
 
 Used `whoami` to confirm the active logged-in user.
 
----
+---## Real World Usage
+
+System administrators frequently use these commands when connecting to a server for the first time.
+
+A common workflow is:
+
+1. Check operating system and kernel version
+2. Confirm system hostname
+3. Inspect system uptime and load
+4. Verify CPU and memory resources
+5. Review disk devices and storage usage
+6. Confirm the active logged-in user
+
+These steps help engineers quickly understand the health and configuration of a Linux system.
 
 ## Key Takeaways
 
