@@ -67,4 +67,32 @@ This script performs a basic system audit by displaying:
 - How to gather system information using Linux commands
 - How to document technical work for GitHub
 
----
+## Script Breakdown
+
+The Bash script created in this lab gathers basic system information by executing several Linux commands automatically.
+
+Explanation of key parts of the script:
+
+#!/bin/bash  
+Tells Linux to run the script using the Bash shell interpreter.
+
+echo  
+Prints text messages to the terminal to organize the report output.
+
+whoami  
+Displays the username of the currently logged-in user.
+
+uptime  
+Shows how long the system has been running along with the current load average.
+
+df -h  
+Displays disk usage in a human-readable format (GB/MB instead of blocks).
+
+free -h  
+Shows memory usage including total, used, and available RAM.
+
+who  
+Lists users currently logged into the system.
+
+ss -tuln  
+Displays open network ports and listening services on the system.
