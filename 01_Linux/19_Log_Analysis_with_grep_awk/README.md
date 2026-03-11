@@ -2,152 +2,319 @@
 
 ## Lab Overview
 
-This lab demonstrates how Linux administrators and security engineers analyze system log files using command-line tools.
+This lab demonstrates how Linux administrators and security engineers analyze Linux system logs using powerful command-line tools.
 
-Linux systems record important activity in log files. These logs contain information about:
+Linux systems constantly record system activity inside log files. These logs contain important information about:
 
-* login attempts
-* service activity
-* authentication events
-* system errors
-* background processes
+- login attempts
+- authentication activity
+- service operations
+- system errors
+- background processes
 
-By learning how to search and extract information from logs, administrators can troubleshoot system problems and identify suspicious activity.
+Analyzing logs allows administrators and security engineers to:
 
-In this lab we used two important Linux tools:
+- troubleshoot system problems
+- monitor system behavior
+- detect suspicious activity
+- investigate security incidents
 
-* **grep** – used to search for specific patterns in text
-* **awk** – used to extract structured data from files
+Two powerful Linux tools were used in this lab:
+
+- grep — used to search text for specific patterns
+- awk — used to extract structured data from log files
 
 These tools are commonly used in:
 
-* Linux system administration
-* DevOps engineering
-* site reliability engineering (SRE)
-* cybersecurity and incident response
+- Linux System Administration
+- DevOps Engineering
+- Site Reliability Engineering (SRE)
+- Cybersecurity
+- Cloud Infrastructure Operations
 
----
+------------------------------------------------------------
 
-# Lab Environment
+## Lab Environment
 
-Operating System: Ubuntu Linux (Virtual Machine)
-Virtualization Platform: Oracle VirtualBox
-Shell: Bash Terminal
+Operating System  
+Ubuntu Linux (Virtual Machine)
 
-Log files used in this lab:
+Virtualization Platform  
+Oracle VirtualBox
 
-/var/log/auth.log
+Shell  
+Bash Terminal
+
+Log files analyzed in this lab:
+
+/var/log/auth.log  
 /var/log/syslog
 
-These log files store authentication events and system activity.
+These files contain authentication activity and system events.
 
----
+------------------------------------------------------------
 
 # Screenshot Evidence
 
-## 1 — Lab Folder Creation
+------------------------------------------------------------
 
-Screenshot:
+## 1 — Creating the Lab Folder
 
-Screenshots/01_lab19_folder_created.png
+![Lab Folder Created](Screenshots/01_lab19_folder_created.png)
 
-Command used:
+Command Used:
 
 mkdir 19_Log_Analysis_with_grep_awk
 
-### Command Definition
+Command Definition
 
-**mkdir**
+mkdir
 
 Make Directory — creates a new folder in the filesystem.
 
-### Command Breakdown
+Command Breakdown
 
-mkdir → command used to create directories
-19_Log_Analysis_with_grep_awk → name of the folder created for the lab
+mkdir → create directory command  
+19_Log_Analysis_with_grep_awk → name of the new folder
 
----
+What This Command Does
 
-# 2 — Entering the Lab Directory
+This command creates a new folder that stores the files used for this lab.
 
-Screenshot:
+Organizing work into directories is standard practice in Linux system administration and DevOps environments.
 
-Screenshots/02_inside_lab19_directory.png
+------------------------------------------------------------
 
-Command used:
+## 2 — Entering the Lab Directory
+
+![Inside Lab Directory](Screenshots/02_inside_lab19_directory.png)
+
+Command Used:
 
 cd 19_Log_Analysis_with_grep_awk
 
-### Command Definition
+Command Definition
 
-**cd**
+cd
 
-Change Directory — moves the terminal into another folder.
+Change Directory — moves the terminal into another directory.
 
-### Command Breakdown
+Command Breakdown
 
-cd → change directory command
-19_Log_Analysis_with_grep_awk → destination directory
+cd → change directory command  
+19_Log_Analysis_with_grep_awk → destination folder
 
----
+What This Command Does
 
-# 3 — Searching Authentication Logs for SSH Activity
+This command moves the terminal into the lab directory so commands and files can be executed inside the lab folder.
 
-Screenshot:
+------------------------------------------------------------
 
-Screenshots/03_ssh_log_search.png
+## 3 — Searching Authentication Logs for SSH Activity
 
-Command used:
+![SSH Log Search](Screenshots/03_ssh_log_search.png)
+
+Command Used:
 
 grep ssh /var/log/auth.log
 
-### Command Definition
+Command Definition
 
-**grep**
+grep
 
-Global Regular Expression Print — searches files for matching text patterns.
+Global Regular Expression Print — searches text files for lines containing a specific pattern.
 
-### Command Breakdown
+Command Breakdown
 
-grep → search tool
-ssh → keyword being searched
+grep → search command  
+ssh → keyword being searched  
 /var/log/auth.log → authentication log file
 
-### What This Command Shows
+What This Command Does
 
 This command searches the authentication log file for entries related to SSH activity.
 
-Examples of events that may appear:
+Typical SSH log entries include:
 
-* SSH service starting
-* SSH login attempts
-* SSH daemon activity
+- remote login attempts
+- successful logins
+- failed login attempts
+- SSH service events
 
----
+System administrators use this command to review remote access activity.
 
-# 4 — Counting SSH Log Entries
+------------------------------------------------------------
 
-Screenshot:
+## 4 — Counting SSH Log Entries
 
-Screenshots/04_ssh_log_count.png
+![SSH Log Count](Screenshots/04_ssh_log_count.png)
 
-Command used:
+Command Used:
+# Linux Log Analysis with grep and awk
+
+## Lab Overview
+
+This lab demonstrates how Linux administrators and security engineers analyze Linux system logs using powerful command-line tools.
+
+Linux systems constantly record system activity inside log files. These logs contain important information about:
+
+- login attempts
+- authentication activity
+- service operations
+- system errors
+- background processes
+
+Analyzing logs allows administrators and security engineers to:
+
+- troubleshoot system problems
+- monitor system behavior
+- detect suspicious activity
+- investigate security incidents
+
+Two powerful Linux tools were used in this lab:
+
+- grep — used to search text for specific patterns
+- awk — used to extract structured data from log files
+
+These tools are commonly used in:
+
+- Linux System Administration
+- DevOps Engineering
+- Site Reliability Engineering (SRE)
+- Cybersecurity
+- Cloud Infrastructure Operations
+
+------------------------------------------------------------
+
+## Lab Environment
+
+Operating System  
+Ubuntu Linux (Virtual Machine)
+
+Virtualization Platform  
+Oracle VirtualBox
+
+Shell  
+Bash Terminal
+
+Log files analyzed in this lab:
+
+/var/log/auth.log  
+/var/log/syslog
+
+These files contain authentication activity and system events.
+
+------------------------------------------------------------
+
+# Screenshot Evidence
+
+------------------------------------------------------------
+
+## 1 — Creating the Lab Folder
+
+![Lab Folder Created](Screenshots/01_lab19_folder_created.png)
+
+Command Used:
+
+mkdir 19_Log_Analysis_with_grep_awk
+
+Command Definition
+
+mkdir
+
+Make Directory — creates a new folder in the filesystem.
+
+Command Breakdown
+
+mkdir → create directory command  
+19_Log_Analysis_with_grep_awk → name of the new folder
+
+What This Command Does
+
+This command creates a new folder that stores the files used for this lab.
+
+Organizing work into directories is standard practice in Linux system administration and DevOps environments.
+
+------------------------------------------------------------
+
+## 2 — Entering the Lab Directory
+
+![Inside Lab Directory](Screenshots/02_inside_lab19_directory.png)
+
+Command Used:
+
+cd 19_Log_Analysis_with_grep_awk
+
+Command Definition
+
+cd
+
+Change Directory — moves the terminal into another directory.
+
+Command Breakdown
+
+cd → change directory command  
+19_Log_Analysis_with_grep_awk → destination folder
+
+What This Command Does
+
+This command moves the terminal into the lab directory so commands and files can be executed inside the lab folder.
+
+------------------------------------------------------------
+
+## 3 — Searching Authentication Logs for SSH Activity
+
+![SSH Log Search](Screenshots/03_ssh_log_search.png)
+
+Command Used:
+
+grep ssh /var/log/auth.log
+
+Command Definition
+
+grep
+
+Global Regular Expression Print — searches text files for lines containing a specific pattern.
+
+Command Breakdown
+
+grep → search command  
+ssh → keyword being searched  
+/var/log/auth.log → authentication log file
+
+What This Command Does
+
+This command searches the authentication log file for entries related to SSH activity.
+
+Typical SSH log entries include:
+
+- remote login attempts
+- successful logins
+- failed login attempts
+
+System administrators use this command to review remote access activity.
+
+------------------------------------------------------------
+
+## 4 — Counting SSH Log Entries
+
+![SSH Log Count](Screenshots/04_ssh_log_count.png)
+
+Command Used:
 
 grep ssh /var/log/auth.log | wc -l
 
-### Command Breakdown
+Command Breakdown
 
-grep ssh → finds SSH-related log entries
+grep ssh → finds SSH related log entries  
+| → pipe operator  
 
-| → pipe operator that sends output to another command
+wc → word count utility  
+-l → counts lines
 
-wc → word count utility
+Symbol Explanation
 
--l → counts lines of text
-
-### Symbol Explanation
-
-**| (pipe)**
+|  (pipe)
 
 The pipe operator sends the output of one command to another command.
 
@@ -157,179 +324,183 @@ Command A | Command B
 
 Output from Command A becomes input for Command B.
 
-### What This Command Does
+Command Definition
 
-1. Searches authentication logs for SSH entries
-2. Sends those results to the wc command
-3. Counts how many lines exist
 
-This shows the number of SSH events recorded in the log.
+wc
 
----
+wc stands for Word Count.
 
-# 5 — Extracting Timestamp Fields with awk
+It counts:
 
-Screenshot:
+- lines
+- words
+- characters
 
-Screenshots/05_log_timestamp_fields.png
+What This Command Does
 
-Command used:
+1. grep searches the authentication log for SSH entries  
+2. the pipe sends the output to wc  
+3. wc -l counts how many lines exist
+
+This shows how many SSH related events occurred in the system logs.
+
+Security engineers often use this technique to detect unusual login activity.
+
+------------------------------------------------------------
+
+## 5 — Extracting Timestamp Fields Using awk
+
+![Log Timestamp Fields](Screenshots/05_log_timestamp_fields.png)
+
+
+Command Used:
 
 awk '{print $1,$2,$3}' /var/log/syslog | head
 
-### Command Definition
+Command Definition
 
-**awk**
+awk
 
-A powerful Linux text-processing tool used to extract and manipulate columns of data from structured text files.
+awk is a powerful Linux text-processing tool used to analyze structured text files.
 
-### Command Breakdown
+Command Breakdown
 
-awk → text processing program
+awk → text processing tool  
+{print $1,$2,$3} → print the first three columns  
+/var/log/syslog → system log file  
+| → pipe operator  
+head → display first 10 lines
 
-{print $1,$2,$3} → print the first three columns of each line
+Symbol Explanation
 
-/var/log/syslog → system activity log file
+$ (Field Indicator)
 
-| → pipe output to the next command
+In awk the dollar sign represents a column in text.
 
-head → display the first 10 lines of output
-
-### Symbol Explanation
-
-**$ (field indicator)**
-
-In awk, the dollar symbol represents a column in the text.
-
-$1 → first column
-$2 → second column
+$1 → first column  
+$2 → second column  
 $3 → third column
 
-### What This Command Does
+What This Command Does
 
-Extracts the timestamp columns from the system log file.
+This command extracts the timestamp columns from the system log file.
 
-Example output:
+Example output
 
-Mar 10 20:30
-Mar 10 20:31
+Mar 10 20:30  
+Mar 10 20:31  
 Mar 10 20:32
 
-Security engineers often examine timestamps to understand when system events occurred.
+Security engineers analyze timestamps to determine when system events occurred.
 
----
+------------------------------------------------------------
 
-# 6 — Searching Logs for Password Events
+## 6 — Searching Logs for Password Activity
 
-Screenshot:
+![Failed Login Attempts](Screenshots/06_failed_login_attempts.png)
 
-Screenshots/06_failed_login_attempts.png
-
-Command used:
+Command Used:
 
 grep -i password /var/log/auth.log | head
 
-### Command Breakdown
+Command Breakdown
 
-grep → search command
-
--i → ignore case sensitivity
-
-password → keyword being searched
-
-/var/log/auth.log → authentication log file
-
-| → send results to another command
-
+grep → search command  
+-i → ignore case sensitivity  
+password → keyword being searched  
+/var/log/auth.log → authentication log  
+| → pipe operator  
 head → show first 10 results
 
-### Flag Explanation
+Flag Explanation
 
-**-i**
+-i
 
 The -i flag tells grep to ignore case sensitivity.
 
-Examples that would match:
+Examples that match:
 
-password
-Password
+password  
+Password  
 PASSWORD
 
-### What This Command Shows
+What This Command Does
 
-Authentication events related to password activity including:
+This command searches authentication logs for password related activity.
 
-* login sessions
-* authentication checks
-* credential events
+Examples include:
 
-Security engineers analyze these logs to detect:
+- password authentication attempts
+- login attempts
+- credential validation events
 
-* failed login attempts
-* brute-force attacks
-* suspicious access attempts
+Security engineers analyze this data to detect:
 
----
+- brute force attacks
+- unauthorized access attempts
+- suspicious login activity
+
+------------------------------------------------------------
 
 # Key Linux Concepts Learned
 
-## grep
+grep
 
-grep is used to search files for specific text patterns.
-
-Common uses include:
-
-* searching system logs
-* filtering command output
-* troubleshooting services
-
----
-
-## awk
-
-awk is a text processing language used to extract columns from structured text.
+grep searches text files for specific patterns.
 
 Common uses include:
 
-* parsing log files
-* formatting output
-* analyzing structured data
+- searching system logs
+- filtering command output
+- troubleshooting services
 
----
+awk
+
+awk extracts structured data from text files.
+
+Common uses include:
+
+- parsing log files
+- formatting output
+- analyzing structured system data
+
+------------------------------------------------------------
 
 # Linux Log Analysis
 
-Linux systems store logs that record:
+Linux systems generate logs that record:
 
-* authentication events
-* service activity
-* system processes
-* security alerts
+- authentication events
+- service activity
+- background processes
+- system warnings
+- security alerts
 
-Log analysis helps administrators:
+Log analysis allows administrators to:
 
-* troubleshoot system issues
-* monitor system behavior
-* investigate suspicious activity
-* detect security incidents
+- troubleshoot problems
+- monitor system behavior
+- investigate suspicious activity
+- detect security incidents
 
----
+------------------------------------------------------------
 
 # Lab Summary
 
-In this lab I practiced analyzing Linux system log files using commonly used command-line tools.
+In this lab I practiced analyzing Linux log files using commonly used command-line tools.
 
-Skills demonstrated:
+Skills demonstrated
 
-* searching logs with grep
-* counting log entries with wc
-* extracting data fields with awk
-* investigating authentication events
+- searching logs with grep
+- counting log entries with wc
+- extracting structured fields with awk
+- investigating authentication activity
 
-These skills are important for roles in:
+These skills are important for careers in:
 
-* Linux System Administration
-* DevOps Engineering
-* Site Reliability Engineering
-* Cybersecurity
-* Cloud Infrastructure Operations
+- Linux System Administration
+- DevOps Engineering
+- Site Reliability Engineering
+- Cybersecurity
+- Cloud Infrastructure Operations
