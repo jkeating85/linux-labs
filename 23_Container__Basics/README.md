@@ -214,24 +214,68 @@ Docker performs the following process:
 7. The container exits after completing execution.
 
 ---
+## Screenshots
 
-# Screenshots
+### System Update Completed
 
-## Docker Permission Error
+![APT Update Completed](Screenshots/01_apt_update_completed.png)
 
-![Docker Permission Error](screenshots/05_docker_permission_denied.png)
-
-This screenshot shows the permission error that occurs when a user attempts to run Docker without being part of the docker group.
+This screenshot confirms that the system package lists were successfully updated using the `apt update` command before installing Docker.
 
 ---
 
-## Docker Hello World Container
+### Docker Installation Started
 
-![Docker Hello World](screenshots/06_docker_hello_world_success.png)
+![Docker Install Start](Screenshots/02_docker_install_start.png)
 
-This screenshot shows the successful execution of the hello-world container.
+This screenshot shows the beginning of the Docker installation process using the system package manager.
 
-The message confirms that Docker is installed and functioning properly.
+---
+
+### Docker Installation Completed
+
+![Docker Install Completed](Screenshots/03_docker_install_completed.png)
+
+This screenshot confirms that Docker and its dependencies were installed successfully on the system.
+
+---
+
+### Docker Version Verification
+
+![Docker Version Check](Screenshots/04_docker_version_check.png)
+
+This screenshot verifies that Docker was installed correctly by checking the installed Docker version.
+
+---
+
+### Docker Permission Error
+
+![Docker Permission Error](Screenshots/05_docker_permission_denied.png)
+
+This screenshot shows the permission error that occurs when a user attempts to run Docker without being part of the `docker` group.
+
+---
+
+### Docker Hello World Container
+
+![Docker Hello World](Screenshots/06_docker_hello_world_success.png)
+
+This screenshot shows the successful execution of the `hello-world` container.
+The output confirms that Docker is installed and functioning properly.
+
+---
+
+### Docker Container List
+
+![Docker Container List](Screenshots/07_docker_container_list.png)
+
+This screenshot displays the container created during the lab using the command:
+
+docker ps -a
+
+This command lists all containers, including stopped containers, container IDs, images used, and container status.
+
+
 
 ---
 
