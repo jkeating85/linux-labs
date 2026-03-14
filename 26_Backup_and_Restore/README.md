@@ -312,7 +312,7 @@ Backup restored
 Restore verified
 
 ![Restore verified](Screenshots/06_restore_verified.png)
-```
+
 
 ---
 
