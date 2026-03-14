@@ -274,45 +274,44 @@ The deleted files were successfully restored.
 # Screenshot Evidence
 
 ## Screenshot 1
-Files created in backup directory
+Test files created
 
-```
-01_files_created.png
-```
+![Test files created](Screenshots/01_test_files_created.png)
+
+---
 
 ## Screenshot 2
 Backup archive created
 
-```
-02_backup_archive_created.png
-```
+![Backup archive created](Screenshots/02_backup_archive_created.png)
+
+---
 
 ## Screenshot 3
 Backup archive verified
 
-```
-03_backup_archive_verified.png
-```
+![Backup archive verified](Screenshots/03_backup_archive_verified.png)
+
+---
 
 ## Screenshot 4
 Original files deleted
 
-```
-04_original_files_deleted.png
-```
+![Original files deleted](Screenshots/04_original_files_deleted.png)
+
+---
 
 ## Screenshot 5
-Backup archive restored
+Backup restored
 
-```
-05_backup_restored.png
-```
+![Backup restored](Screenshots/05_backup_restored.png)
+
+---
 
 ## Screenshot 6
 Restore verified
 
-```
-06_restore_verified.png
+![Restore verified](Screenshots/06_restore_verified.png)
 ```
 
 ---
