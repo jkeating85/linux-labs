@@ -279,7 +279,7 @@ Large services use multiple servers and load balancing to distribute traffic acr
 
 ### Network Interface Information
 
-![Network Interfaces](Screenshots/01_ip_address_check.png)
+![Network Interfaces](Screenshots/01_ip_address.png)
 
 ### Routing Table
 
@@ -287,7 +287,7 @@ Large services use multiple servers and load balancing to distribute traffic acr
 
 ### Ping Test to Public DNS
 
-![Ping Test](Screenshots/03_ping_test.png)
+![Ping Test](Screenshots/03_ping_google_dns.png)
 
 ### Ping Domain Name
 
