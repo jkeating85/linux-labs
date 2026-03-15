@@ -268,116 +268,138 @@ Without this command you would need to **close and reopen the terminal**.
 ## Screenshots
 
 ### Screenshot 01 — Home Directory
-File: Screenshots/01_home_directory.png
 
-Explanation:
-This screenshot shows the user's Linux home directory. The home directory is the default working directory for a user account and stores personal files, configuration files, and user-specific data.
+![Home Directory](Screenshots/01_home_directory.png)
 
+Explanation:  
+This screenshot shows the user’s Linux home directory. The home directory is the default working directory for a Linux user account and stores personal files, configuration files, and user-specific data.
+
+---
 
 ### Screenshot 02 — Hidden User Files
-File: Screenshots/02_hidden_user_files.png
 
-Command Used:
-ls -a
+![Hidden User Files](Screenshots/02_hidden_user_files.png)
 
-Explanation:
-This screenshot shows hidden files in the user's home directory. Files that begin with a dot (`.`) are hidden configuration files. Examples include `.bashrc`, `.profile`, and `.config`. These files control user environment settings and shell behavior.
+Command Used:  
+`ls -a`
 
+Explanation:  
+This screenshot shows hidden files in the user's home directory. Files that begin with a dot (`.`) are hidden configuration files in Linux. Examples include `.bashrc`, `.profile`, and `.config`. These files control user environment settings and shell behavior.
+
+---
 
 ### Screenshot 03 — Top of .bashrc File
-File: Screenshots/03_bashrc_top.png
 
-Command Used:
-nano ~/.bashrc
+![Top of bashrc](Screenshots/03_bashrc_top.png)
 
-Explanation:
-This screenshot shows the top portion of the `.bashrc` file opened in the Nano text editor. The `.bashrc` file contains Bash shell configuration settings that run automatically when a new terminal session starts.
+Command Used:  
+`nano ~/.bashrc`
 
+Explanation:  
+This screenshot shows the top section of the `.bashrc` file opened in the Nano text editor. The `.bashrc` file contains Bash shell configuration settings that run automatically whenever a new terminal session starts.
+
+---
 
 ### Screenshot 04 — Bottom of .bashrc File
-File: Screenshots/04_bashrc_bottom.png
 
-Explanation:
-This screenshot shows the bottom section of the `.bashrc` file. This area typically contains user-defined settings such as aliases, environment variables, and custom shell configurations.
+![Bottom of bashrc](Screenshots/04_bashrc_bottom.png)
 
+Explanation:  
+This screenshot shows the bottom section of the `.bashrc` file. This area is commonly used for user-defined configurations such as aliases, environment variables, and other custom shell settings.
+
+---
 
 ### Screenshot 05 — .profile Contents
-File: Screenshots/05_profile_contents.png
 
-Command Used:
-nano ~/.profile
+![Profile Contents](Screenshots/05_profile_contents.png)
 
-Explanation:
-This screenshot shows the `.profile` file contents. The `.profile` file is another shell configuration file that runs when a user logs into a system. It is commonly used to initialize environment variables and startup programs.
+Command Used:  
+`nano ~/.profile`
 
+Explanation:  
+This screenshot shows the contents of the `.profile` configuration file. The `.profile` file is executed during login and is used to configure environment variables and startup behavior for the user's shell session.
+
+---
 
 ### Screenshot 06 — Environment Variables (Top)
-File: Screenshots/06_environment_variables_top.png
 
-Command Used:
-printenv
+![Environment Variables Top](Screenshots/06_environment_variables_top.png)
 
-Explanation:
-This screenshot displays the top section of environment variables printed by the `printenv` command. Environment variables store system information such as the current user, home directory, shell type, language settings, and terminal configuration.
+Command Used:  
+`printenv`
 
+Explanation:  
+This screenshot shows the top portion of environment variables displayed using the `printenv` command. Environment variables store system information such as the current user, shell, home directory, and other session configuration values.
+
+---
 
 ### Screenshot 07 — Environment Variables (Bottom)
-File: Screenshots/07_environment_variables_bottom.png
 
-Command Used:
-printenv
+![Environment Variables Bottom](Screenshots/07_environment_variables_bottom.png)
 
-Explanation:
-This screenshot shows the continuation of environment variables displayed by `printenv`. These variables control how programs and the operating system behave during a user session.
+Command Used:  
+`printenv`
 
+Explanation:  
+This screenshot shows the continuation of environment variables printed by the `printenv` command. These variables help define how programs behave and how the system environment is configured.
+
+---
 
 ### Screenshot 08 — PATH Variable
-File: Screenshots/08_path_variable.png
 
-Command Used:
-echo $PATH
+![PATH Variable](Screenshots/08_path_variable.png)
 
-Explanation:
-This screenshot shows the PATH environment variable. The PATH variable contains directories separated by colons (`:`). When a command is typed in the terminal, Linux searches these directories to locate the executable program.
+Command Used:  
+`echo $PATH`
 
+Explanation:  
+This screenshot shows the PATH environment variable. The PATH variable contains a list of directories separated by colons (`:`). When a command is entered in the terminal, Linux searches these directories to locate the executable program.
+
+---
 
 ### Screenshot 09 — Alias Test
-File: Screenshots/09_alias_test.png
 
-Command Used:
-alias ll='ls -lah'
+![Alias Test](Screenshots/09_alias_test.png)
 
-Explanation:
-This screenshot shows the creation and testing of a command alias. An alias creates a shortcut command. In this case, the alias `ll` runs the command `ls -lah`, which displays a detailed directory listing including hidden files.
+Command Used:  
+`alias ll='ls -lah'`
 
+Explanation:  
+This screenshot shows the creation and testing of a Bash alias. An alias creates a shortcut command. In this case, the alias `ll` runs the command `ls -lah`, which displays a detailed directory listing including hidden files and human-readable file sizes.
+
+---
 
 ### Screenshot 10 — Editing .bashrc (Top)
-File: Screenshots/10_bashrc_edit_top.png
 
-Command Used:
-nano ~/.bashrc
+![Bashrc Edit Top](Screenshots/10_bashrc_edit_top.png)
 
-Explanation:
-This screenshot shows the `.bashrc` file being edited in the Nano text editor. The alias command was added to this file so it will load automatically whenever a new terminal session starts.
+Command Used:  
+`nano ~/.bashrc`
 
+Explanation:  
+This screenshot shows the `.bashrc` file being edited in the Nano text editor. The alias command was added so the shortcut command will load automatically whenever a new terminal session starts.
+
+---
 
 ### Screenshot 11 — Editing .bashrc (Bottom)
-File: Screenshots/11_bashrc_edit_bottom.png
 
-Explanation:
-This screenshot shows the bottom section of the `.bashrc` file where the alias was added. Adding the alias here makes the shortcut permanent for the user.
+![Bashrc Edit Bottom](Screenshots/11_bashrc_edit_bottom.png)
 
+Explanation:  
+This screenshot shows the bottom section of the `.bashrc` file where the alias command was added. Saving the alias here makes the command shortcut persistent for the user.
+
+---
 
 ### Screenshot 12 — Alias Loaded After Reloading Bash
-File: Screenshots/12_alias_loaded_after_bashrc.png
 
-Commands Used:
-source ~/.bashrc  
-ll
+![Alias Loaded](Screenshots/12_alias_loaded_after_bashrc.png)
 
-Explanation:
-This screenshot shows the Bash configuration being reloaded using `source ~/.bashrc`. After reloading the configuration, the `ll` alias works successfully and displays a detailed directory listing. This confirms the alias was correctly saved in `.bashrc`.
+Commands Used:  
+`source ~/.bashrc`  
+`ll`
 
+Explanation:  
+This screenshot shows the Bash configuration being reloaded using `source ~/.bashrc`. After reloading the configuration, the `ll` alias works successfully and displays a detailed directory listing. This confirms the alias was correctly saved in the `.bashrc` configuration file.
 ---
 
 # Key Concepts Learned
