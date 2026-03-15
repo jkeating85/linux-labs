@@ -265,138 +265,118 @@ Without this command you would need to **close and reopen the terminal**.
 
 ---
 
-# Screenshots
+## Screenshots
 
-## Screenshot 01 — Viewing Hidden Files
+### Screenshot 01 — Home Directory
+File: Screenshots/01_home_directory.png
 
-File:
+Explanation:
+This screenshot shows the user's Linux home directory. The home directory is the default working directory for a user account and stores personal files, configuration files, and user-specific data.
 
-01_hidden_files_ls-a.png
 
-Description:
+### Screenshot 02 — Hidden User Files
+File: Screenshots/02_hidden_user_files.png
 
-This screenshot shows the `ls -a` command displaying hidden Linux configuration files such as:
+Command Used:
+ls -a
 
-.bashrc
-.profile
-.config
+Explanation:
+This screenshot shows hidden files in the user's home directory. Files that begin with a dot (`.`) are hidden configuration files. Examples include `.bashrc`, `.profile`, and `.config`. These files control user environment settings and shell behavior.
 
-These files control user environment settings.
 
----
+### Screenshot 03 — Top of .bashrc File
+File: Screenshots/03_bashrc_top.png
 
-## Screenshot 02 — Environment Variables
+Command Used:
+nano ~/.bashrc
 
-File:
+Explanation:
+This screenshot shows the top portion of the `.bashrc` file opened in the Nano text editor. The `.bashrc` file contains Bash shell configuration settings that run automatically when a new terminal session starts.
 
-02_printenv_output.png
 
-Description:
+### Screenshot 04 — Bottom of .bashrc File
+File: Screenshots/04_bashrc_bottom.png
 
-This screenshot shows the `printenv` command output displaying environment variables including:
+Explanation:
+This screenshot shows the bottom section of the `.bashrc` file. This area typically contains user-defined settings such as aliases, environment variables, and custom shell configurations.
 
-SHELL
-HOME
-USER
-PATH
-LANG
 
-These variables define how the Linux environment behaves.
+### Screenshot 05 — .profile Contents
+File: Screenshots/05_profile_contents.png
 
----
+Command Used:
+nano ~/.profile
 
-## Screenshot 03 — PATH Variable
+Explanation:
+This screenshot shows the `.profile` file contents. The `.profile` file is another shell configuration file that runs when a user logs into a system. It is commonly used to initialize environment variables and startup programs.
 
-File:
 
-03_echo_path_variable.png
+### Screenshot 06 — Environment Variables (Top)
+File: Screenshots/06_environment_variables_top.png
 
-Description:
+Command Used:
+printenv
 
-This screenshot displays the PATH variable using:
+Explanation:
+This screenshot displays the top section of environment variables printed by the `printenv` command. Environment variables store system information such as the current user, home directory, shell type, language settings, and terminal configuration.
 
+
+### Screenshot 07 — Environment Variables (Bottom)
+File: Screenshots/07_environment_variables_bottom.png
+
+Command Used:
+printenv
+
+Explanation:
+This screenshot shows the continuation of environment variables displayed by `printenv`. These variables control how programs and the operating system behave during a user session.
+
+
+### Screenshot 08 — PATH Variable
+File: Screenshots/08_path_variable.png
+
+Command Used:
 echo $PATH
 
-This shows the directories Linux searches when running commands.
+Explanation:
+This screenshot shows the PATH environment variable. The PATH variable contains directories separated by colons (`:`). When a command is typed in the terminal, Linux searches these directories to locate the executable program.
 
----
 
-## Screenshot 04 — Creating Alias
+### Screenshot 09 — Alias Test
+File: Screenshots/09_alias_test.png
 
-File:
-
-04_create_alias_ll.png
-
-Description:
-
-This screenshot shows the creation of a custom alias:
-
+Command Used:
 alias ll='ls -lah'
 
-This allows the user to quickly run a detailed directory listing.
+Explanation:
+This screenshot shows the creation and testing of a command alias. An alias creates a shortcut command. In this case, the alias `ll` runs the command `ls -lah`, which displays a detailed directory listing including hidden files.
 
----
 
-## Screenshot 05 — Editing Bash Configuration
+### Screenshot 10 — Editing .bashrc (Top)
+File: Screenshots/10_bashrc_edit_top.png
 
-File:
+Command Used:
+nano ~/.bashrc
 
-05_edit_bashrc.png
+Explanation:
+This screenshot shows the `.bashrc` file being edited in the Nano text editor. The alias command was added to this file so it will load automatically whenever a new terminal session starts.
 
-Description:
 
-This screenshot shows the `.bashrc` file opened using the nano editor.
+### Screenshot 11 — Editing .bashrc (Bottom)
+File: Screenshots/11_bashrc_edit_bottom.png
 
-The alias command was added to make the shortcut permanent.
+Explanation:
+This screenshot shows the bottom section of the `.bashrc` file where the alias was added. Adding the alias here makes the shortcut permanent for the user.
 
----
 
-## Screenshot 06 — Saving Bash Configuration
+### Screenshot 12 — Alias Loaded After Reloading Bash
+File: Screenshots/12_alias_loaded_after_bashrc.png
 
-File:
+Commands Used:
+source ~/.bashrc  
+ll
 
-06_bashrc_saved.png
-
-Description:
-
-This screenshot shows the `.bashrc` configuration file after saving the alias entry.
-
----
-
-## Screenshot 07 — Reloading Bash Configuration
-
-File:
-
-07_source_bashrc.png
-
-Description:
-
-The command used:
-
-source ~/.bashrc
-
-This reloads the Bash configuration so the new alias becomes active immediately.
-
----
-
-## Screenshot 08 — Testing Alias
-
-File:
-
-08_alias_ll_test.png
-
-Description:
-
-This screenshot shows the alias command `ll` successfully executing the `ls -lah` command.
-
-The output displays:
-
-* file permissions
-* hidden files
-* file sizes
-* directories
-
-This confirms the alias was successfully loaded from `.bashrc`.
+Explanation:
+This screenshot shows the Bash configuration being reloaded using `source ~/.bashrc`. After reloading the configuration, the `ll` alias works successfully and displays a detailed directory listing. This confirms the alias was correctly saved in `.bashrc`.
 
 ---
 
