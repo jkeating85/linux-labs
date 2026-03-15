@@ -223,51 +223,51 @@ Default ACLs apply permissions to **future files created inside the directory**.
 
 ---
 
-## Screenshot 1 — Creating the Lab Directory
+## Screenshot 1 — Environment Start
 
-![Screenshot 1](Screenshots/01_create_acl_lab_directory.png)
+![Screenshot 1](Screenshots/01_environment_start.png)
 
-The `mkdir` command creates the working directory for the ACL lab.
-
----
-
-## Screenshot 2 — Creating the Test File
-
-![Screenshot 2](Screenshots/02_create_project_file.png)
-
-The `touch` command creates an empty file called **project.txt** which will be used to test ACL permissions.
+This screenshot shows the starting lab environment in the Ubuntu terminal. The `whoami` command confirms the active logged-in user, and `pwd` confirms the current working directory before beginning the ACL lab.
 
 ---
 
-## Screenshot 3 — Viewing File Permissions
+## Screenshot 2 — Installing ACL Tools
 
-![Screenshot 3](Screenshots/03_view_file_permissions.png)
+![Screenshot 2](Screenshots/02_install_acl_tools.png)
 
-`ls -l` displays the file permissions, owner, group, and timestamps.
-
----
-
-## Screenshot 4 — Viewing ACL Information
-
-![Screenshot 4](Screenshots/04_view_acl_permissions.png)
-
-`getfacl` shows the current Access Control List permissions for the file.
+This screenshot confirms that the `acl` package is installed on the system. These tools are required to use `getfacl` and `setfacl` for viewing and modifying Access Control Lists.
 
 ---
 
-## Screenshot 5 — Adding ACL Permissions
+## Screenshot 3 — Creating the ACL Directory
 
-![Screenshot 5](Screenshots/05_add_acl_permission.png)
+![Screenshot 3](Screenshots/03_create_acl_directory.png)
 
-The `setfacl` command assigns **read permission** to the user **nobody**.
+This screenshot shows the creation of the `acl_lab` directory using `mkdir`, then entering it with `cd`. The `pwd` command verifies that the terminal is now inside the correct working directory for the lab.
 
 ---
 
-## Screenshot 6 — Verifying ACL Permissions
+## Screenshot 4 — Creating the Test File
 
-![Screenshot 6](Screenshots/06_verify_acl_permission.png)
+![Screenshot 4](Screenshots/04_create_test_file.png)
 
-Running `getfacl` confirms the ACL entry was successfully added.
+This screenshot shows the creation of the test file `project.txt` using the `touch` command. The `ls -l` command confirms the file exists and displays its standard Linux permissions, ownership, and timestamp.
+
+---
+
+## Screenshot 5 — Viewing ACL Permissions
+
+![Screenshot 5](Screenshots/05_view_acl_permissions.png)
+
+This screenshot shows the output of `getfacl project.txt`. It displays the file owner, group owner, and the default ACL permission entries currently assigned to the file.
+
+---
+
+## Screenshot 6 — Adding ACL Permission
+
+![Screenshot 6](Screenshots/06_add_acl_permission.png)
+
+This screenshot shows `setfacl` being used to add a new ACL entry for the user `nobody` with read permission on `project.txt`. The follow-up `getfacl` output confirms that the new ACL entry was successfully added.
 
 ---
 
@@ -275,15 +275,15 @@ Running `getfacl` confirms the ACL entry was successfully added.
 
 ![Screenshot 7](Screenshots/07_modify_acl_permission.png)
 
-Permissions are updated to allow **read and write access** for the user **nobody**.
+This screenshot shows the ACL entry for user `nobody` being modified from read-only to read and write permissions. The updated `getfacl` output confirms the change.
 
 ---
 
-## Screenshot 8 — Removing ACL Permissions
+## Screenshot 8 — Removing ACL Permission
 
 ![Screenshot 8](Screenshots/08_remove_acl_permission.png)
 
-The ACL entry is removed using the `-x` option in the `setfacl` command.
+This screenshot shows the ACL entry for user `nobody` being removed from `project.txt` using `setfacl -x`. The `getfacl` output confirms that the entry is no longer present.
 
 ---
 
@@ -291,7 +291,7 @@ The ACL entry is removed using the `-x` option in the `setfacl` command.
 
 ![Screenshot 9](Screenshots/09_directory_acl.png)
 
-ACL permissions are applied to the **entire directory**, allowing user **nobody** full access.
+This screenshot shows ACL permissions being applied directly to the current directory using `setfacl`. The `getfacl .` output confirms that user `nobody` now has directory-level ACL permissions.
 
 ---
 
@@ -299,7 +299,7 @@ ACL permissions are applied to the **entire directory**, allowing user **nobody*
 
 ![Screenshot 10](Screenshots/10_default_acl.png)
 
-Default ACLs ensure that any **new files created inside the directory automatically inherit permissions**.
+This screenshot shows a default ACL being applied to the directory. Default ACLs automatically affect new files and subdirectories created inside that directory, which is useful in shared Linux environments.
 
 ---
 
@@ -307,11 +307,8 @@ Default ACLs ensure that any **new files created inside the directory automatica
 
 ![Screenshot 11](Screenshots/11_acl_verification.png)
 
-Final verification confirms:
+This final verification screenshot shows the file listing and ACL information for `project.txt`. The `+` symbol in the `ls -l` output indicates that extended ACL permissions are present on the file.
 
-- File permissions
-- ACL entries
-- The `+` symbol indicating extended ACL permissions.
 
 ---
 
