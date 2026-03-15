@@ -1,0 +1,350 @@
+# Linux Lab 28 — File System Permissions (ACL)
+
+## Objective
+
+The objective of this lab is to understand how **Access Control Lists (ACLs)** work in Linux and how they extend traditional file permission models.
+
+In this lab I learned how to:
+
+- View standard Linux permissions
+- Inspect existing ACL entries
+- Add ACL permissions to a user
+- Modify ACL permissions
+- Remove ACL entries
+- Apply ACL permissions to directories
+- Configure **default ACLs** for future files
+
+ACLs are commonly used in **enterprise Linux environments** where multiple users require different permission levels on the same file or directory.
+
+---
+
+# Environment
+
+- Ubuntu Linux (Virtual Machine)
+- Oracle VirtualBox
+- Windows 11 Host Machine
+- Bash Terminal
+- VS Code
+- GitHub Lab Repository
+
+---
+
+# Key Linux Concepts
+
+## Standard Linux Permissions
+
+Linux normally uses **three permission groups**:
+
+| Category | Meaning |
+|--------|--------|
+| User | File owner |
+| Group | Members of the assigned group |
+| Other | Everyone else |
+
+Permissions are represented as:
+
+| Symbol | Meaning |
+|------|------|
+| r | Read |
+| w | Write |
+| x | Execute |
+
+Example:
+
+```
+-rw-rw-r--+
+```
+
+Breakdown:
+
+| Section | Meaning |
+|------|------|
+| - | Regular file |
+| rw- | Owner permissions |
+| rw- | Group permissions |
+| r-- | Other users |
+| + | Indicates **ACL permissions exist**
+
+---
+
+# What is an ACL?
+
+An **Access Control List (ACL)** allows administrators to assign permissions to **specific users or groups beyond the traditional permission model**.
+
+Example:
+
+```
+user:nobody:rwx
+```
+
+This means:
+
+User **nobody** has:
+
+- Read
+- Write
+- Execute
+
+permissions on the file.
+
+---
+
+# Commands Used
+
+| Command | Description |
+|------|------|
+| `mkdir` | Creates a new directory |
+| `cd` | Changes the current directory |
+| `pwd` | Displays the current working directory |
+| `touch` | Creates an empty file |
+| `ls -l` | Lists files with detailed permissions |
+| `getfacl` | Displays Access Control List permissions |
+| `setfacl` | Modifies ACL permissions |
+| `clear` | Clears the terminal screen |
+| `sudo` | Runs a command with administrator privileges |
+
+---
+
+# Command Breakdown
+
+## Creating a Directory
+
+```
+mkdir acl_lab
+```
+
+| Component | Meaning |
+|------|------|
+| mkdir | Make directory |
+| acl_lab | Name of the new directory |
+
+---
+
+## Viewing File Permissions
+
+```
+ls -l
+```
+
+| Component | Meaning |
+|------|------|
+| ls | List directory contents |
+| -l | Long format showing permissions, owner, and timestamps |
+
+---
+
+## Viewing ACL Permissions
+
+```
+getfacl project.txt
+```
+
+| Component | Meaning |
+|------|------|
+| getfacl | Display ACL permissions |
+| project.txt | Target file |
+
+---
+
+## Adding ACL Permissions
+
+```
+sudo setfacl -m u:nobody:r project.txt
+```
+
+| Component | Meaning |
+|------|------|
+| sudo | Run with administrator privileges |
+| setfacl | Modify ACL permissions |
+| -m | Modify ACL entry |
+| u | User |
+| nobody | Username |
+| r | Read permission |
+| project.txt | Target file |
+
+---
+
+## Modifying ACL Permissions
+
+```
+sudo setfacl -m u:nobody:rw project.txt
+```
+
+This updates permissions to allow:
+
+- Read
+- Write
+
+---
+
+## Removing ACL Permissions
+
+```
+sudo setfacl -x u:nobody project.txt
+```
+
+| Component | Meaning |
+|------|------|
+| -x | Remove ACL entry |
+| u:nobody | Target user |
+
+---
+
+## Setting ACL on a Directory
+
+```
+sudo setfacl -m u:nobody:rwx .
+```
+
+| Component | Meaning |
+|------|------|
+| . | Current directory |
+| rwx | Read Write Execute |
+
+---
+
+## Setting Default ACL
+
+```
+sudo setfacl -d -m u:nobody:rwx .
+```
+
+| Component | Meaning |
+|------|------|
+| -d | Default ACL |
+| -m | Modify entry |
+| u:nobody:rwx | Default permissions for user |
+
+Default ACLs apply permissions to **future files created inside the directory**.
+
+---
+
+# Screenshots
+
+---
+
+## Screenshot 1 — Creating the Lab Directory
+
+![Screenshot 1](Screenshots/01_create_acl_lab_directory.png)
+
+The `mkdir` command creates the working directory for the ACL lab.
+
+---
+
+## Screenshot 2 — Creating the Test File
+
+![Screenshot 2](Screenshots/02_create_project_file.png)
+
+The `touch` command creates an empty file called **project.txt** which will be used to test ACL permissions.
+
+---
+
+## Screenshot 3 — Viewing File Permissions
+
+![Screenshot 3](Screenshots/03_view_file_permissions.png)
+
+`ls -l` displays the file permissions, owner, group, and timestamps.
+
+---
+
+## Screenshot 4 — Viewing ACL Information
+
+![Screenshot 4](Screenshots/04_view_acl_permissions.png)
+
+`getfacl` shows the current Access Control List permissions for the file.
+
+---
+
+## Screenshot 5 — Adding ACL Permissions
+
+![Screenshot 5](Screenshots/05_add_acl_permission.png)
+
+The `setfacl` command assigns **read permission** to the user **nobody**.
+
+---
+
+## Screenshot 6 — Verifying ACL Permissions
+
+![Screenshot 6](Screenshots/06_verify_acl_permission.png)
+
+Running `getfacl` confirms the ACL entry was successfully added.
+
+---
+
+## Screenshot 7 — Modifying ACL Permissions
+
+![Screenshot 7](Screenshots/07_modify_acl_permission.png)
+
+Permissions are updated to allow **read and write access** for the user **nobody**.
+
+---
+
+## Screenshot 8 — Removing ACL Permissions
+
+![Screenshot 8](Screenshots/08_remove_acl_permission.png)
+
+The ACL entry is removed using the `-x` option in the `setfacl` command.
+
+---
+
+## Screenshot 9 — Applying ACL to a Directory
+
+![Screenshot 9](Screenshots/09_directory_acl.png)
+
+ACL permissions are applied to the **entire directory**, allowing user **nobody** full access.
+
+---
+
+## Screenshot 10 — Setting Default ACL
+
+![Screenshot 10](Screenshots/10_default_acl.png)
+
+Default ACLs ensure that any **new files created inside the directory automatically inherit permissions**.
+
+---
+
+## Screenshot 11 — ACL Verification
+
+![Screenshot 11](Screenshots/11_acl_verification.png)
+
+Final verification confirms:
+
+- File permissions
+- ACL entries
+- The `+` symbol indicating extended ACL permissions.
+
+---
+
+# What I Learned
+
+This lab demonstrated how **Access Control Lists extend traditional Linux permissions**.
+
+Key takeaways:
+
+- Standard Linux permissions are limited to **owner, group, and others**
+- ACLs allow **fine-grained permission control**
+- ACLs are widely used in **multi-user enterprise systems**
+- The `+` symbol in `ls -l` indicates **extended ACL permissions exist**
+- Default ACLs ensure **consistent permissions for new files**
+
+ACL management is an essential skill for:
+
+- Linux System Administrators
+- DevOps Engineers
+- Cloud Engineers
+- Cybersecurity Professionals
+
+---
+
+# Lab Complete
+
+This lab successfully demonstrated:
+
+- Viewing ACL permissions
+- Adding ACL entries
+- Modifying permissions
+- Removing ACL entries
+- Applying directory ACLs
+- Configuring default ACLs
+
+These skills are part of the **CompTIA Linux+ XK0-006 certification objectives** and are commonly used in professional Linux administration environments.
