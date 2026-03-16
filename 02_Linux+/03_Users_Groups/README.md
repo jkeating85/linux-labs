@@ -221,7 +221,7 @@ Shows the user successfully added to the group.
 
 ## File Ownership Before Change
 
-![Ownership Before](Screenshots/07-initial-file-ownership.png)
+![Ownership Before](Screenshots/07-initial-file--ownership.png)
 
 Displays file ownership before modification.
 
