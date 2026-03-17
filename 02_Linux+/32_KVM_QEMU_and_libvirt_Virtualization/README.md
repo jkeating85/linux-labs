@@ -174,69 +174,140 @@ Displays detailed information about the default virtual network.
 
 ## Screenshots and Explanations
 
-### Screenshot 07 — Libvirt Service Running
-![Libvirt Service](Screenshots/07_libvirt_service_running.png)
+### Screenshot 01 — System Update
+![System Update](Screenshots/01_system_update.png)
 
-**Explanation:**
-This screenshot shows the libvirt service successfully running.  
-The system reports `active (running)`, confirming that virtualization services are operational.
-
-The message:
-```
-Unable to open /dev/kvm
-```
-indicates that hardware virtualization is not exposed.
+**Explanation:**  
+This screenshot shows the system update process using `apt update` and `apt upgrade`. This ensures all packages are up to date before installing virtualization components, which is a best practice in Linux system administration.
 
 ---
 
-### Screenshot 08 — No Virtual Machines
-![Virsh List](Screenshots/08_virsh_list_all.png)
+### Screenshot 02 — KVM Installation Start
+![KVM Installation Start](Screenshots/02_kvm_install_start.png)
 
-**Explanation:**
-This confirms that no virtual machines currently exist in the environment.  
-The virtualization stack is installed, but no VMs have been created yet.
+**Explanation:**  
+This screenshot shows the beginning of the installation of virtualization packages including KVM, QEMU, libvirt, and related tools. These packages provide the foundation for managing virtual machines in Linux.
+
+---
+
+### Screenshot 03 — KVM Installation Complete
+![KVM Installation Complete](Screenshots/03_kvm_install_complete.png)
+
+**Explanation:**  
+This screenshot confirms that all required virtualization packages were successfully installed. The system is now equipped with the tools needed to support virtualization.
+
+---
+
+### Screenshot 04 — Virtualization Check Failed
+![Virtualization Check Failed](Screenshots/04_virtualization_check_failed.png)
+
+**Explanation:**  
+This screenshot shows the command:
+
+```bash
+egrep -c '(vmx|svm)' /proc/cpuinfo
+```
+
+The output returned `0`, meaning CPU virtualization extensions are not available. This occurs because the lab is running inside VirtualBox without nested virtualization enabled.
+
+---
+
+### Screenshot 05 — KVM Modules Check
+![KVM Modules Check](Screenshots/05_kvm_modules_check.png)
+
+**Explanation:**  
+This screenshot shows the command:
+
+```bash
+lsmod | grep kvm
+```
+
+No output indicates that KVM kernel modules are not loaded. This is expected because hardware virtualization support is not exposed inside the VirtualBox environment.
+
+---
+
+### Screenshot 06 — Libvirt Service Status
+![Libvirt Service Status](Screenshots/06_libvirt_service_status.png)
+
+**Explanation:**  
+This screenshot displays the status of the `libvirtd` service before it is started. It confirms the service is installed but not yet active.
+
+---
+
+### Screenshot 07 — Libvirt Service Running
+![Libvirt Service Running](Screenshots/07_libvirt_service_running.png)
+
+**Explanation:**  
+This screenshot confirms the `libvirtd` service has been successfully started and is actively running. This service is responsible for managing virtual machines and virtual networks.
+
+---
+
+### Screenshot 08 — Virsh List All
+![Virsh List All](Screenshots/08_virsh_list_all.png)
+
+**Explanation:**  
+This screenshot shows the output of:
+
+```bash
+virsh list --all
+```
+
+No virtual machines are listed, confirming that the virtualization environment is set up but no VMs have been created yet.
 
 ---
 
 ### Screenshot 09 — Libvirt Network List
-![Network List](Screenshots/09_libvirt_networks.png)
+![Libvirt Network List](Screenshots/09_libvert_networks.png)
 
-**Explanation:**
-The default virtual network is:
-- Active
-- Persistent
-- Configured to autostart
+**Explanation:**  
+This screenshot shows the output of:
 
-This confirms proper network configuration for virtualization.
+```bash
+sudo virsh net-list --all
+```
+
+It confirms that the default virtual network is:
+- Active  
+- Persistent  
+- Configured to autostart  
+
+This verifies that libvirt networking is correctly configured.
 
 ---
 
 ### Screenshot 10 — Network Interfaces
 ![Network Interfaces](Screenshots/10_network_interfaces.png)
 
-**Explanation:**
-This shows multiple network interfaces:
+**Explanation:**  
+This screenshot displays system network interfaces using `ip a`. It includes:
+- `enp0s3` → Main VirtualBox NAT network  
+- `virbr0` → Libvirt virtual bridge network  
+- `docker0` → Docker network interface  
+- `lo` → Loopback interface  
 
-- `enp0s3` → Main network (VirtualBox NAT)
-- `virbr0` → Libvirt virtual bridge network
-- `docker0` → Docker network interface
-- `lo` → Loopback interface
-
-This demonstrates a layered networking environment similar to real infrastructure.
+This demonstrates a multi-layered networking environment similar to real-world systems.
 
 ---
 
-### Screenshot 11 — Network Details
-![Network Details](Screenshots/11_libvirt_network_details.png)
+### Screenshot 11 — Libvirt Network Details
+![Libvirt Network Details](Screenshots/11_libvirt_network_details.png)
 
-**Explanation:**
-This displays detailed configuration of the default network:
-- Active: Yes
-- Autostart: Yes
-- Persistent: Yes
-- Bridge: `virbr0`
+**Explanation:**  
+This screenshot shows detailed information about the default libvirt network using:
 
-This confirms that virtual networking is correctly configured.
+```bash
+sudo virsh net-info default
+```
+
+It confirms:
+- Network is active  
+- Persistent configuration is enabled  
+- Autostart is enabled  
+- Bridge interface is `virbr0`  
+
+This validates that the virtualization network is fully operational.
+
+---
 
 ---
 
