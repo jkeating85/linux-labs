@@ -93,44 +93,59 @@ sudo lvcreate -L 300M -n lab_lv lab_vg
 
 ---
 
-### Screenshot 1 — System Update  
-Shows successful update of package repositories using `apt update`.
+### Screenshot 1 — LVM Installation Started
+![Screenshot 1](Screenshots/01_install_lvm2.png)
+
+This screenshot shows the installation of LVM tools using the `sudo apt install lvm2 -y` command. This step prepares the system for logical volume management by installing the required packages.
 
 ---
 
-### Screenshot 2 — LVM Installation  
-Shows installation of `lvm2`, enabling Logical Volume Manager functionality.
+### Screenshot 2 — LVM Installation Completed
+![Screenshot 2](Screenshots/02_install_lvm2_complete.png)
+
+This confirms that the LVM2 package was successfully installed. The system is now ready to create and manage logical volumes.
 
 ---
 
-### Screenshot 3 — Disk Files Created  
-Displays `disk1.img` and `disk2.img` created using `fallocate`.
+### Screenshot 3 — Virtual Disk Files Created
+![Screenshot 3](Screenshots/03_create_virtual_disks.png)
+
+This shows the creation of disk image files (`disk1.img` and `disk2.img`) using the `fallocate` command. These files simulate physical disks for the lab.
 
 ---
 
-### Screenshot 4 — Loop Devices  
-Shows `/dev/loop12` and `/dev/loop13` mapped to disk image files.
+### Screenshot 4 — Loop Devices Created
+![Screenshot 4](Screenshots/04_loop_devices_created.png)
+
+This displays loop devices (`/dev/loop12`, `/dev/loop13`) mapped to the disk image files using `losetup`. These act as virtual block devices.
 
 ---
 
-### Screenshot 5 — Physical Volumes Created  
-Shows successful creation of PVs using `pvcreate`.
+### Screenshot 5 — Physical Volumes Created
+![Screenshot 5](Screenshots/05_physical_volumes_created.png)
+
+This shows successful initialization of Physical Volumes using the `pvcreate` command. These are the foundation for building LVM storage.
 
 ---
 
-### Screenshot 6 — Volume Group Created  
-Shows `lab_vg` combining both physical volumes into one storage pool.
+### Screenshot 6 — Volume Group Created
+![Screenshot 6](Screenshots/06_volume_group_created.png)
+
+This confirms the creation of the Volume Group (`lab_vg`) using `vgcreate`, combining multiple physical volumes into one storage pool.
 
 ---
 
-### Screenshot 7 — Logical Volume Created  
-Shows `lab_lv` created with a size of 300MB from the volume group.
+### Screenshot 7 — Logical Volume Created
+![Screenshot 7](Screenshots/07_logical_volume_created.png)
+
+This shows the Logical Volume (`lab_lv`) created from the volume group using `lvcreate`. This is the usable storage layer.
 
 ---
 
-### Screenshot 8 — Mounted Filesystem  
-Shows logical volume mounted at `/mnt/lab_storage` and verified using `df -h`.
+### Screenshot 8 — Filesystem Mounted
+![Screenshot 8](Screenshots/08_filesystem_mounted.png)
 
+This verifies that the logical volume was formatted and mounted to `/mnt/lab_storage`, and confirmed using `df -h`. The storage is now active and usable.
 ---
 
 ## 🧠 Key Concepts
