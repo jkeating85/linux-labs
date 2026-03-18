@@ -629,172 +629,142 @@ This confirmed that the service was fully restored.
 
 ---
 
-## Screenshots and Detailed Explanations
-
-### Screenshot 01 — System Update
-![Screenshot 01](Screenshots/01_system_update.png)
-
-**Explanation:**  
-This screenshot shows the Ubuntu package lists being updated from configured repositories. This is a standard first step before installing new packages because it ensures the system knows about the latest available package versions.
+## Screenshots & Explanations
 
 ---
 
-### Screenshot 02 — Kerberos Realm Prompt
-![Screenshot 02](Screenshots/02_kerberos_realm_prompt.png)
+### Screenshot 1 — System Update
+![Screenshot 1](Screenshots/01_system_update.png)
 
-**Explanation:**  
-This screenshot captures the package configuration prompt displayed during Kerberos installation. Kerberos often requests a default realm, which is typically an uppercase administrative domain in enterprise authentication environments. This prompt shows that Kerberos components were being configured as part of the install process.
-
----
-
-### Screenshot 03 — SSSD, LDAP, and Kerberos Installed
-![Screenshot 03](Screenshots/03_sssd_ldap_kerberos_installed.png)
-
-**Explanation:**  
-This screenshot confirms successful installation of the required packages used in the lab:
-- SSSD
-- LDAP utilities
-- Kerberos user tools
-
-This established the software foundation for identity and authentication testing.
+This screenshot shows the system packages being updated. This ensures the system is fully patched and ready for installing authentication services.
 
 ---
 
-### Screenshot 04 — SSSD Service Status
-![Screenshot 04](Screenshots/04_sssd_service_status.png)
+### Screenshot 2 — Kerberos Realm Prompt
+![Screenshot 2](Screenshots/02_kerberos_realm_prompt.png)
 
-**Explanation:**  
-This screenshot shows the initial review of the SSSD service state. Checking service status early is important because it helps establish a baseline before troubleshooting begins.
-
----
-
-### Screenshot 05 — SSSD Config Permission Denied
-![Screenshot 05](Screenshots/05_sssd_config_permission_denied.png)
-
-**Explanation:**  
-This screenshot shows that a normal user could not access the protected SSSD configuration location. This demonstrates that auth-related configuration directories are protected by Linux file permissions.
+This screenshot shows the Kerberos configuration prompt during installation. This step defines the authentication realm used by the system.
 
 ---
 
-### Screenshot 06 — SSSD Config Access with sudo
-![Screenshot 06](Screenshots/06_sssd_config_with_sudo.png)
+### Screenshot 3 — SSSD, LDAP, Kerberos Installed
+![Screenshot 3](Screenshots/03_sssd_ldap_kerberos_installed.png)
 
-**Explanation:**  
-This screenshot shows successful access to the SSSD configuration area using elevated privileges. This confirms the directory exists and that administrative access is required to inspect or modify it.
-
----
-
-### Screenshot 07 — SSSD Directory Review
-![Screenshot 07](Screenshots/07_sssd_directory_review.png)
-
-**Explanation:**  
-This screenshot shows a more detailed view of the SSSD directory contents and permissions. Reviewing directory contents is important when verifying whether required files exist and whether permissions appear correct.
+This screenshot confirms that SSSD, LDAP, and Kerberos packages were successfully installed.
 
 ---
 
-### Screenshot 08 — Missing or Checked Config File
-![Screenshot 08](Screenshots/08_sssd_conf_check.png)
+### Screenshot 4 — SSSD Service Status
+![Screenshot 4](Screenshots/04_sssd_service_status.png)
 
-**Explanation:**  
-This screenshot documents the check for `/etc/sssd/sssd.conf`. This step confirmed whether the main config file already existed or needed to be created.
-
----
-
-### Screenshot 09 — Initial SSSD Configuration Created
-![Screenshot 09](Screenshots/09_sssd_conf_created.png)
-
-**Explanation:**  
-This screenshot shows the first manually created SSSD configuration file inside Nano. This was the beginning of the configuration process, but the initial config later required correction during troubleshooting.
+This screenshot shows the SSSD service status. Initially verifying service behavior is critical before configuration.
 
 ---
 
-### Screenshot 10 — SSSD Config File Permissions Secured
+### Screenshot 5 — Permission Denied Error
+![Screenshot 5](Screenshots/05_sssd_config_permission_denied.png)
+
+This screenshot shows a permission denied error when attempting to edit the SSSD config file. This highlights the need for elevated privileges.
+
+---
+
+### Screenshot 6 — Editing Config with sudo
+![Screenshot 6](Screenshots/06_sssd_config_with_sudo.png)
+
+This screenshot shows using sudo to properly edit the configuration file with administrative privileges.
+
+---
+
+### Screenshot 7 — Config Permissions Set
+![Screenshot 7](Screenshots/07_sssd_config_permissions.png)
+
+This screenshot shows the configuration file permissions being reviewed or modified.
+
+---
+
+### Screenshot 8 — Config Validation
+![Screenshot 8](Screenshots/08_sssd_conf_check.png)
+
+This screenshot shows verification of the SSSD configuration file before proceeding.
+
+---
+
+### Screenshot 9 — Config File Created
+![Screenshot 9](Screenshots/09_sssd_conf_created.png)
+
+This screenshot shows the initial creation of the SSSD configuration file inside Nano.
+
+---
+
+### Screenshot 10 — Permissions Secured
 ![Screenshot 10](Screenshots/10_sssd_conf_permissions_secured.png)
 
-**Explanation:**  
-This screenshot shows that the config file permissions were changed to `600`.
+This screenshot shows the config file permissions set to 600:
+- Owner: read/write
+- Others: no access
 
-That means:
-- owner can read and write
-- no one else can access it
-
-This is critical for authentication service security.
+This is critical for authentication security.
 
 ---
 
-### Screenshot 11 — SSSD Service Restart Failed
-![Screenshot 11](Screenshots/11_sssd_service_restart_failed.png)
+### Screenshot 11 — Service Restart Failed
+![Screenshot 11](Screenshots/11_sssd_service_failed.png)
 
-**Explanation:**  
-This screenshot shows that SSSD failed to restart after the initial configuration attempt. This failure transformed the lab into a real troubleshooting exercise rather than a simple setup task.
-
----
-
-### Screenshot 12 — SSSD Failed Status Details
-![Screenshot 12](Screenshots/12_sssd_status_failed.png)
-
-**Explanation:**  
-This screenshot shows the failed service status after restart. Reviewing failed service output is important because it confirms that the issue is real and provides clues about where to investigate next.
+This screenshot shows the SSSD service failing to restart after configuration.
 
 ---
 
-### Screenshot 13 — SSSD Configuration Fixed
+### Screenshot 12 — Status Error Details
+![Screenshot 12](Screenshots/12_sssd_status_error_details.png)
+
+This screenshot shows detailed failure output from the service, providing clues for troubleshooting.
+
+---
+
+### Screenshot 13 — Config Fixed
 ![Screenshot 13](Screenshots/13_sssd_conf_fixed.png)
 
-**Explanation:**  
-This screenshot shows the corrected configuration file after troubleshooting and revision. This was the key fix step in the lab.
+This screenshot shows the corrected configuration file after identifying errors.
 
 ---
 
-### Screenshot 14 — SSSD Service Restart Failed Again
+### Screenshot 14 — Restart Still Failing
 ![Screenshot 14](Screenshots/14_sssd_service_restart_failed.png)
 
-**Explanation:**  
-This screenshot shows that the service still failed after another restart attempt, confirming that additional troubleshooting was required and that the problem had not yet been fully resolved.
+This screenshot shows that the service still failed after the first fix attempt, requiring deeper troubleshooting.
 
 ---
 
-### Screenshot 15 — SSSD Failed Status Review
+### Screenshot 15 — Service Still Failed
 ![Screenshot 15](Screenshots/15_sssd_status_failed.png)
 
-**Explanation:**  
-This screenshot captured another status review after failure. Re-checking service status after each attempted fix is a professional troubleshooting habit because it verifies whether a change actually solved the issue.
+This screenshot confirms the service is still not running properly.
 
 ---
 
-### Screenshot 16 — SSSD Configuration Review
+### Screenshot 16 — Config Review
 ![Screenshot 16](Screenshots/16_sssd_config_review.png)
 
-**Explanation:**  
-This screenshot shows the configuration being reviewed again inside Nano. This step was important because it forced a direct re-examination of the provider settings and overall config structure.
+This screenshot shows a detailed review of the configuration file to identify remaining issues.
 
 ---
 
-### Screenshot 17 — SSSD Journal Error Logs
+### Screenshot 17 — Journal Error Logs
 ![Screenshot 17](Screenshots/17_sssd_journal_error.png)
 
-**Explanation:**  
-This screenshot is one of the most important in the lab. The journal logs showed the message:
+This screenshot shows journal logs revealing the root cause:
+"Could not restart critical service [LOCAL]"
 
-```text
-Could not restart critical service [LOCAL]
-```
-
-This indicated that the configured `LOCAL` domain could not start properly and strongly pointed to an invalid provider configuration rather than a simple permissions issue.
+This indicates a provider misconfiguration.
 
 ---
 
-### Screenshot 18 — SSSD Service Running Successfully
+### Screenshot 18 — Service Running Successfully
 ![Screenshot 18](Screenshots/18_sssd_service_running_fixed.png)
 
-**Explanation:**  
-This final screenshot confirms that the SSSD service is now:
+This screenshot confirms the SSSD service is now running successfully after fixing the configuration.
 
-```text
-Active: active (running)
-```
-
-This proves that the corrected configuration and proper permissions resolved the failure and restored the service successfully.
+---
 
 ---
 
