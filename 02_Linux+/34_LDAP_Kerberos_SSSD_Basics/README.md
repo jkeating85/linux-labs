@@ -641,7 +641,7 @@ This screenshot shows the system packages being updated. This ensures the system
 ---
 
 ### Screenshot 2 — Kerberos Realm Prompt
-![Screenshot 2](Screenshots/02_kerberos_realm_prompt.png)
+![Screenshot 2](Screenshots/02_kerberos_realm_promt.png)
 
 This screenshot shows the Kerberos configuration prompt during installation. This step defines the authentication realm used by the system.
 
