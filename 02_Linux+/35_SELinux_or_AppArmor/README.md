@@ -52,78 +52,112 @@ The purpose of this lab is to understand and manage Linux security using AppArmo
 ## Screenshots & Explanations
 
 ### Screenshot 01 — AppArmor Status Check
-Command:
-sudo aa-status
 
-Explanation:
-Displays all loaded AppArmor profiles and enforcement status. Confirms AppArmor is active and protecting system services.
+![Screenshot 01](Screenshots/01_apparmor_status.png)
+
+**Command:**
+`sudo aa-status`
+
+**Explanation:**
+Displays all loaded AppArmor profiles and their current enforcement state. Confirms that AppArmor is installed, active, and monitoring system processes.
+
+**Professional Explanation:**
+This command is used to validate that AppArmor is operational on the system. It provides visibility into active security profiles and whether they are enforcing or in complain mode, which is critical for verifying host-based security controls.
 
 ---
 
 ### Screenshot 02 — AppArmor Service Status
-Command:
-systemctl status apparmor
 
-Explanation:
-Shows that the AppArmor service is running and enabled at the system level.
+![Screenshot 02](Screenshots/02_apparmor_service_status.png)
+
+**Command:**
+`systemctl status apparmor`
+
+**Explanation:**
+Shows the current status of the AppArmor service, confirming that it is running and enabled at the system level.
+
+**Professional Explanation:**
+This verifies that the AppArmor daemon is actively running and managed by systemd. Ensuring the service is active is essential because profiles cannot be enforced if the service is stopped.
 
 ---
 
 ### Screenshot 03 — Enforced Profiles
-Command:
-sudo aa-status | grep enforce
 
-Explanation:
-Filters output to display only profiles currently in enforce mode. This helps identify which services are actively protected.
+![Screenshot 03](Screenshots/03_apparmor_enforced_profiles.png)
+
+**Command:**
+`sudo aa-status | grep enforce`
+
+**Explanation:**
+Filters the AppArmor output to display only profiles currently in enforce mode.
+
+**Professional Explanation:**
+This allows quick identification of which services are actively protected. Profiles in enforce mode are actively blocking unauthorized actions, making this a key validation step in security auditing.
 
 ---
 
 ### Screenshot 04 — Full Profile List
-Command:
-sudo aa-status
 
-Explanation:
-Displays all AppArmor profiles loaded on the system, including snap packages and system services.
+![Screenshot 04](Screenshots/04_apparmor_utils_install.png)
+
+**Command:**
+`sudo aa-status`
+
+**Explanation:**
+Displays the complete list of AppArmor profiles loaded on the system, including system services and snap packages.
+
+**Professional Explanation:**
+Reviewing the full profile list provides visibility into system coverage. This helps identify which applications are protected and which may require additional hardening through profile creation or tuning.
 
 ---
 
 ### Screenshot 05 — Complain Mode (Troubleshooting Included)
-Commands:
-sudo aa-complain /bin/ping
-aa-complain /usr/sbin/cupsd
-sudo aa-complain /usr/sbin/cupsd
 
-Explanation:
-- First attempt failed because /bin/ping does not have an AppArmor profile
-- Second attempt failed due to missing sudo (permission denied)
-- Final attempt succeeded with elevated privileges
+![Screenshot 05](Screenshots/05_apparmor_complain_mode_success.png)
 
-Professional Explanation:
-Initially attempted to run aa-complain on a binary without a profile, resulting in no action. Then encountered a permission error when modifying /usr/sbin/cupsd. Resolved the issue by rerunning the command with sudo, successfully switching the profile into complain mode.
+**Commands:**
+`sudo aa-complain /bin/ping`
+`aa-complain /usr/sbin/cupsd`
+`sudo aa-complain /usr/sbin/cupsd`
+
+**Explanation:**
+
+* First attempt failed because `/bin/ping` does not have an AppArmor profile
+* Second attempt failed due to missing sudo (permission denied)
+* Final attempt succeeded with elevated privileges
+
+**Professional Explanation:**
+This step demonstrates real-world troubleshooting. Attempting to modify a binary without a profile results in no action, while insufficient permissions cause failure. Elevating privileges with sudo allows successful modification of the `cupsd` profile into complain mode, enabling monitoring without enforcement.
 
 ---
 
 ### Screenshot 06 — Verification
-Command:
-sudo aa-status | grep cupsd
 
-Explanation:
-Confirms that the cupsd service is running and actively tracked by AppArmor. Shows process ID and associated profile.
+![Screenshot 06](Screenshots/06_verify_complain_mode.png)
 
-Professional Explanation:
-Verified AppArmor profile status using filtered output and confirmed that the service is actively monitored.
+**Command:**
+`sudo aa-status | grep cupsd`
+
+**Explanation:**
+Confirms that the `cupsd` service is running and its AppArmor profile is being tracked.
+
+**Professional Explanation:**
+This verification step ensures that the profile change was applied successfully. Filtering output confirms the service is active and that AppArmor is monitoring it, which is essential for validating configuration changes.
 
 ---
 
 ### Screenshot 07 — Enforce Mode
-Command:
-sudo aa-enforce /usr/sbin/cupsd
 
-Explanation:
-Switches the profile back to enforce mode, ensuring that AppArmor actively blocks unauthorized actions instead of only logging them.
+![Screenshot 07](Screenshots/07_apparmor_enforce_mode.png)
 
-Professional Explanation:
-Switched the AppArmor profile back to enforce mode, confirming the ability to toggle between monitoring and enforcement states.
+**Command:**
+`sudo aa-enforce /usr/sbin/cupsd`
+
+**Explanation:**
+Switches the AppArmor profile back to enforce mode, restoring active protection.
+
+**Professional Explanation:**
+Re-enabling enforce mode ensures that AppArmor resumes blocking unauthorized actions instead of just logging them. This demonstrates the ability to toggle between monitoring and enforcement, a key skill in system hardening and security operations.
 
 ---
 
