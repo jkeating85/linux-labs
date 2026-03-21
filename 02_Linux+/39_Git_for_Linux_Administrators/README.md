@@ -1,14 +1,25 @@
 # Lab 39 - Git for Linux Administrators
 
-## Objective
+---
 
-The purpose of this lab was to learn how Linux administrators use Git for version control. In this lab, I initialized a Git repository, configured Git identity, created and tracked files, staged changes, committed updates, modified files, and reviewed commit history.
+## 📌 Objective
+
+The purpose of this lab was to learn how Linux administrators use Git for version control.
+
+In this lab, I:
+- Initialized a Git repository
+- Configured Git identity
+- Created and tracked files
+- Staged changes
+- Committed updates
+- Modified files
+- Reviewed commit history
 
 This lab demonstrates a complete Git workflow used in real-world DevOps, cloud, and system administration environments.
 
 ---
 
-## Environment
+## 🖥️ Environment
 
 - Ubuntu Linux (Virtual Machine)
 - Oracle VirtualBox
@@ -19,90 +30,134 @@ This lab demonstrates a complete Git workflow used in real-world DevOps, cloud, 
 
 ---
 
-## Commands Used (With Definitions)
+## ⚙️ Commands Used (With Definitions)
 
-mkdir -p ~/IT_Labs/02_Linux+/39_Git_for_Linux_Administrators/Screenshots  
-Creates the full directory structure including parent folders if they do not exist.
+```bash
+mkdir -p ~/IT_Labs/02_Linux+/39_Git_for_Linux_Administrators/Screenshots
+```
+Creates the full directory structure, including parent folders if they do not exist.
 
-cd ~/IT_Labs/02_Linux+/39_Git_for_Linux_Administrators  
+```bash
+cd ~/IT_Labs/02_Linux+/39_Git_for_Linux_Administrators
+```
 Changes into the lab directory.
 
-pwd  
+```bash
+pwd
+```
 Prints the current working directory to confirm correct path.
 
-git --version  
+```bash
+git --version
+```
 Displays installed Git version to confirm availability.
 
-git config --global user.name "John Keating"  
+```bash
+git config --global user.name "John Keating"
+```
 Sets global Git username.
 
-git config --global user.email "your_email@example.com"  
+```bash
+git config --global user.email "your_email@example.com"
+```
 Sets global Git email address.
 
-git config --list  
+```bash
+git config --list
+```
 Displays current Git configuration settings.
 
-git init  
+```bash
+git init
+```
 Initializes a new Git repository in the current directory.
 
-touch README.md  
+```bash
+touch README.md
+```
 Creates an empty README.md file.
 
-git status  
+```bash
+git status
+```
 Shows repository status including untracked, staged, and modified files.
 
-git add README.md  
+```bash
+git add README.md
+```
 Stages README.md for commit.
 
-git commit -m "Initial commit - added README"  
+```bash
+git commit -m "Initial commit - added README"
+```
 Creates the first commit with a message.
 
-git log --oneline  
+```bash
+git log --oneline
+```
 Displays commit history in compact format.
 
-echo "Git Lab File" > file1.txt  
+```bash
+echo "Git Lab File" > file1.txt
+```
 Creates file1.txt and writes content (overwrites if exists).
 
-git add file1.txt  
+```bash
+git add file1.txt
+```
 Stages file1.txt.
 
-git commit -m "Added file1.txt"  
+```bash
+git commit -m "Added file1.txt"
+```
 Commits new file to repository.
 
-echo "Adding more content" >> file1.txt  
+```bash
+echo "Adding more content" >> file1.txt
+```
 Appends new content to file1.txt.
 
-git diff  
+```bash
+git diff
+```
 Shows line-by-line differences between working directory and last commit.
 
-git commit -m "Updated file1.txt with more content"  
+```bash
+git commit -m "Updated file1.txt with more content"
+```
 Commits updated file changes.
 
-clear  
+```bash
+clear
+```
 Clears terminal screen for readability.
 
 ---
 
-## Command Breakdown Examples
+## 🔍 Command Breakdown Examples
 
 ### git init
 
+```bash
 git init
+```
 
-- git → Calls Git program  
-- init → Initializes a repository  
+- `git` → Calls Git program  
+- `init` → Initializes a repository  
 
-Creates a hidden .git directory and enables version control.
+Creates a hidden `.git` directory and enables version control.
 
 ---
 
 ### git add file1.txt
 
+```bash
 git add file1.txt
+```
 
-- git → Calls Git  
-- add → Stages file  
-- file1.txt → Target file  
+- `git` → Calls Git  
+- `add` → Stages file  
+- `file1.txt` → Target file  
 
 Moves file from working directory to staging area.
 
@@ -110,12 +165,14 @@ Moves file from working directory to staging area.
 
 ### git commit -m "message"
 
+```bash
 git commit -m "Added file1.txt"
+```
 
-- git → Calls Git  
-- commit → Saves snapshot  
-- -m → Message flag  
-- "message" → Commit description  
+- `git` → Calls Git  
+- `commit` → Saves snapshot  
+- `-m` → Message flag  
+- `"message"` → Commit description  
 
 Creates a permanent snapshot with metadata and history tracking.
 
@@ -123,7 +180,9 @@ Creates a permanent snapshot with metadata and history tracking.
 
 ### git diff
 
+```bash
 git diff
+```
 
 Compares current file changes with last committed version.
 
@@ -131,30 +190,32 @@ Shows exactly what changed before committing.
 
 ---
 
-## Symbols and Syntax Explained
+## 🧩 Symbols and Syntax Explained
 
-~ → Home directory  
-/ → Directory separator  
-+ → Literal character in folder name  
-. → Current directory  
-.git → Hidden Git repository data  
-README.md → Markdown file  
--p → Create parent directories  
---global → Apply setting globally  
---list → Show settings  
---version → Show program version  
---oneline → Compact log view  
--m → Commit message flag  
-> → Overwrite file output  
->> → Append to file  
-" " → Wrap text with spaces  
-HEAD → Current commit pointer  
-master → Current branch name  
-100644 → Standard file permission in Git  
+| Symbol | Meaning |
+|------|--------|
+| `~` | Home directory |
+| `/` | Directory separator |
+| `+` | Literal character in folder name |
+| `.` | Current directory |
+| `.git` | Hidden Git repository data |
+| `README.md` | Markdown file |
+| `-p` | Create parent directories |
+| `--global` | Apply setting globally |
+| `--list` | Show settings |
+| `--version` | Show program version |
+| `--oneline` | Compact log view |
+| `-m` | Commit message flag |
+| `>` | Overwrite file output |
+| `>>` | Append to file |
+| `" "` | Wrap text with spaces |
+| `HEAD` | Current commit pointer |
+| `master/main` | Current branch |
+| `100644` | Standard file permission in Git |
 
 ---
 
-## Git Workflow Demonstrated
+## 🔄 Git Workflow Demonstrated
 
 1. Create directory  
 2. Initialize repository  
@@ -175,135 +236,149 @@ master → Current branch name
 
 ---
 
-## Screenshots and Explanations
+## 📸 Screenshots and Explanations
 
-Screenshot 01 - Directory Setup  
-Created lab directory and confirmed location with pwd.
+### Screenshot 01 — Directory Setup  
+Created the lab directory and verified the working path using `pwd`. This confirms correct navigation within the Linux filesystem.
 
-Screenshot 02 - Git Version  
-Verified Git installation.
+### Screenshot 02 — Git Version  
+Verified Git is installed and accessible. This ensures the environment is properly prepared for version control operations.
 
-Screenshot 03 - Git Config  
-Set and verified username and email.
+### Screenshot 03 — Git Config  
+Configured global username and email. These values are embedded in commits for tracking authorship.
 
-Screenshot 04 - Git Init  
-Initialized repository and created .git directory.
+### Screenshot 04 — Git Init  
+Initialized a new Git repository. This created the hidden `.git` directory that enables version tracking.
 
-Screenshot 05 - Create README  
-Created README.md file.
+### Screenshot 05 — Create README  
+Created the README.md file. This file serves as documentation for the repository.
 
-Screenshot 06 - Git Status (Untracked)  
-Verified README.md is untracked.
+### Screenshot 06 — Git Status (Untracked)  
+Verified that README.md appears as untracked. Git recognizes the file but is not yet tracking it.
 
-Screenshot 07 - Git Add README  
-Staged README.md.
+### Screenshot 07 — Git Add README  
+Staged README.md. This moves the file into the staging area.
 
-Screenshot 08 - Git Status (Staged)  
-Confirmed README is staged.
+### Screenshot 08 — Git Status (Staged)  
+Confirmed README.md is staged and ready to be committed.
 
-Screenshot 09 - First Commit  
-Created initial commit.
+### Screenshot 09 — First Commit  
+Created the initial commit. This establishes the first snapshot in version history.
 
-Screenshot 10 - Git Log  
-Verified commit history.
+### Screenshot 10 — Git Log  
+Displayed commit history using `git log --oneline`. Shows commit hash and message.
 
-Screenshot 11 - Create file1.txt  
-Created file with echo command.
+### Screenshot 11 — Create file1.txt  
+Created a new file and added initial content using `echo`.
 
-Screenshot 12 - Git Status New File  
-Verified file1.txt is untracked.
+### Screenshot 12 — Git Status New File  
+Verified file1.txt appears as untracked.
 
-Screenshot 13 - Git Add file1.txt  
-Staged file1.txt.
+### Screenshot 13 — Git Add file1.txt  
+Staged file1.txt for commit.
 
-Screenshot 14 - Git Status Staged File  
-Confirmed file1.txt is staged.
+### Screenshot 14 — Git Status Staged File  
+Confirmed file1.txt is staged and ready for commit.
 
-Screenshot 15 - Commit file1.txt  
-Committed new file.
+### Screenshot 15 — Commit file1.txt  
+Committed file1.txt to the repository, creating a new snapshot.
 
-Screenshot 16 - Git Log Updated  
-Verified second commit.
+### Screenshot 16 — Git Log Updated  
+Verified the second commit appears in history.
 
-Screenshot 17 - Modify file  
-Appended new content to file1.txt.
+### Screenshot 17 — Modify File  
+Appended new content to file1.txt using `>>`.
 
-Screenshot 18 - Git Status Modified  
-Detected modified file.
+### Screenshot 18 — Git Status Modified  
+Detected that file1.txt is modified after changes.
 
-Screenshot 19 - Git Diff  
-Viewed exact changes.
+### Screenshot 19 — Git Diff  
+Displayed exact line-by-line changes before committing.
 
-Screenshot 20 - Git Add Modified File  
-Staged updated file.
+### Screenshot 20 — Git Add Modified File  
+Staged updated file after modifications.
 
-Screenshot 21 - Commit Updated File  
-Committed updated version.
+### Screenshot 21 — Commit Updated File  
+Committed updated version of file1.txt.
 
-Screenshot 22 - Final Git Log  
-Verified full commit history.
-
----
-
-## Results
-
-Successfully completed full Git workflow including repository initialization, file tracking, staging, committing, modifying files, and reviewing commit history.
+### Screenshot 22 — Final Git Log  
+Verified full commit history, confirming all changes were successfully tracked.
 
 ---
 
-## Key Concepts
+## 📊 Results
 
-Repository → Git-managed directory  
-Working Directory → Active files  
-Staging Area → Prepared changes  
-Commit → Snapshot of changes  
-Tracked File → File under Git control  
-Untracked File → New file not yet staged  
-Modified File → Changed after commit  
-Diff → Change comparison  
-History → Timeline of commits  
+Successfully completed a full Git workflow including:
+- Repository initialization
+- File tracking
+- Staging changes
+- Committing updates
+- Modifying files
+- Reviewing commit history
 
 ---
 
-## What I Learned
+## 🧠 Key Concepts
 
-I learned how Git tracks changes through staging and commits, how to manage file versions, and how to inspect changes before committing. I also learned the importance of separating working changes, staged changes, and committed history.
+- Repository → Git-managed directory  
+- Working Directory → Active files  
+- Staging Area → Prepared changes  
+- Commit → Snapshot of changes  
+- Tracked File → File under Git control  
+- Untracked File → New file not yet staged  
+- Modified File → Changed after commit  
+- Diff → Change comparison  
+- History → Timeline of commits  
 
 ---
 
-## Real-World Relevance
+## 🎯 What I Learned
+
+I learned how Git tracks changes through staging and commits, how to manage file versions, and how to inspect changes before committing.
+
+I also learned the importance of separating:
+- Working directory changes  
+- Staged changes  
+- Committed history  
+
+---
+
+## 🌍 Real-World Relevance
 
 Git is used in:
-
 - DevOps
 - Cloud Engineering
 - System Administration
 - Automation
 - Security Operations
 
-It allows version tracking, auditing, rollback, and team collaboration.
+It enables:
+- Version tracking
+- Auditing
+- Rollbacks
+- Team collaboration
 
 ---
 
-## Interview-Level Explanation
+## 🧑‍💼 Interview-Level Explanation
 
 “This lab demonstrates version control using Git, including repository initialization, staging changes, committing updates, tracking file modifications, and reviewing commit history. The workflow reflects real-world DevOps and system administration practices.”
 
 ---
 
-## Interview Notes
+## 🧾 Interview Notes
 
-Why create directories in Linux VM:
-The Linux VM has its own filesystem separate from Windows, so directories must exist inside the VM.
+**Why create directories in Linux VM:**  
+The Linux VM has its own filesystem separate from Windows, so directories must be created inside the Linux environment.
 
-Why use git status:
-It provides real-time visibility into file states and prevents mistakes.
+**Why use git status:**  
+Provides real-time visibility into file states and prevents committing unintended changes.
 
-Why use git diff:
-It allows reviewing exact changes before committing to ensure accuracy.
+**Why use git diff:**  
+Allows reviewing exact changes before committing, ensuring accuracy and preventing errors.
 
 ---
 
-## Final Status
+## ✅ Final Status
 
 Lab Completed Successfully
