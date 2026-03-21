@@ -69,42 +69,50 @@ openssl genrsa -out private.key 2048
 ## Screenshots and Explanations
 
 ### Screenshot 01 — System Update
+![01_lab_directory_setup](Screenshots/01_lab_directory_setup.png)
 
 Updated package lists using apt to ensure the system has the latest repository information before installing OpenSSL.
 
 ### Screenshot 02 — OpenSSL Installation
+![02_apt_update](Screenshots/02_apt_update.png)
 
 Installed OpenSSL, which is required for generating cryptographic keys and certificates.
 
 ### Screenshot 03 — Private Key Generation
+![03_install_openssl](Screenshots/03_install_openssl.png)
 
 Generated a 2048-bit RSA private key using OpenSSL. This key is used for encryption and signing.
 
 ### Screenshot 04 — CSR Creation
+![04_generate_private_key](Screenshots/04_generate_private_key.png)
 
 Created a Certificate Signing Request (CSR) containing identifying information such as country, state, organization, and common name.
 
 ### Screenshot 05 — CSR Details Entered
+![05_create_csr](Screenshots/05_create_csr.png)
 
 Entered certificate details including location (Illinois, Chicago), organization (IT_Labs), and common name (localhost), which are embedded into the certificate.
 
 ### Screenshot 06 — Self-Signed Certificate Creation
+![06_self_signed_certificate](Screenshots/06_self_signed_certificate.png)
 
 Generated a self-signed certificate using the private key and CSR, simulating a Certificate Authority (CA) process.
 
 ### Screenshot 07 — Files Created
+![07_files_created](Screenshots/07_files_created.png)
 
 Verified the creation of:
-
-* private.key (private key)
-* request.csr (certificate signing request)
-* certificate.crt (self-signed certificate)
+- private.key (private key)
+- request.csr (certificate signing request)
+- certificate.crt (self-signed certificate)
 
 ### Screenshot 08 — Securing Private Key
+![08_secure_private_key](Screenshots/08_secure_private_key.png)
 
 Applied `chmod 600` to restrict access to the private key, ensuring only the owner can read and write it. This follows security best practices.
 
 ### Screenshot 09 — Certificate Inspection
+![09_certificate_details](Screenshots/09_certificate_details.png)
 
 Used `openssl x509` to inspect the certificate details, including issuer, subject, validity period, and encryption algorithm.
 
