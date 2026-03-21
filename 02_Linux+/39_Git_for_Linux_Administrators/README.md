@@ -238,71 +238,157 @@ Shows exactly what changed before committing.
 
 ## 📸 Screenshots and Explanations
 
-### Screenshot 01 — Directory Setup  
-Created the lab directory and verified the working path using `pwd`. This confirms correct navigation within the Linux filesystem.
+### Screenshot 01 — Directory Setup
+![Screenshot 01](Screenshots/01_lab_directory_setup.png)
 
-### Screenshot 02 — Git Version  
-Verified Git is installed and accessible. This ensures the environment is properly prepared for version control operations.
+Created the lab directory and verified the working path using `pwd`. This confirms correct navigation within the Linux filesystem and ensures all commands are executed in the intended directory.
 
-### Screenshot 03 — Git Config  
-Configured global username and email. These values are embedded in commits for tracking authorship.
+---
 
-### Screenshot 04 — Git Init  
-Initialized a new Git repository. This created the hidden `.git` directory that enables version tracking.
+### Screenshot 02 — Git Version
+![Screenshot 02](Screenshots/02_git_version_check.png)
 
-### Screenshot 05 — Create README  
-Created the README.md file. This file serves as documentation for the repository.
+Verified Git is installed and accessible. This confirms the system is ready for version control operations and avoids issues later in the workflow.
 
-### Screenshot 06 — Git Status (Untracked)  
-Verified that README.md appears as untracked. Git recognizes the file but is not yet tracking it.
+---
 
-### Screenshot 07 — Git Add README  
-Staged README.md. This moves the file into the staging area.
+### Screenshot 03 — Git Config
+![Screenshot 03](Screenshots/03_git_configuration.png)
 
-### Screenshot 08 — Git Status (Staged)  
-Confirmed README.md is staged and ready to be committed.
+Configured global username and email. These values are embedded into commits and are critical for tracking authorship in collaborative environments.
 
-### Screenshot 09 — First Commit  
-Created the initial commit. This establishes the first snapshot in version history.
+---
 
-### Screenshot 10 — Git Log  
-Displayed commit history using `git log --oneline`. Shows commit hash and message.
+### Screenshot 04 — Git Init
+![Screenshot 04](Screenshots/04_git_init.png)
 
-### Screenshot 11 — Create file1.txt  
-Created a new file and added initial content using `echo`.
+Initialized a new Git repository. This created the hidden `.git` directory, which stores all version control metadata and enables Git tracking.
 
-### Screenshot 12 — Git Status New File  
-Verified file1.txt appears as untracked.
+---
 
-### Screenshot 13 — Git Add file1.txt  
-Staged file1.txt for commit.
+### Screenshot 05 — Create README
+![Screenshot 05](Screenshots/05_create_readme.png)
 
-### Screenshot 14 — Git Status Staged File  
-Confirmed file1.txt is staged and ready for commit.
+Created the `README.md` file. This file serves as documentation for the repository and is typically the first file tracked in any project.
 
-### Screenshot 15 — Commit file1.txt  
-Committed file1.txt to the repository, creating a new snapshot.
+---
 
-### Screenshot 16 — Git Log Updated  
-Verified the second commit appears in history.
+### Screenshot 06 — Git Status (Untracked)
+![Screenshot 06](Screenshots/06_git_status_untracked.png)
 
-### Screenshot 17 — Modify File  
-Appended new content to file1.txt using `>>`.
+Verified that `README.md` appears as untracked. Git recognizes the file exists but is not yet tracking it.
 
-### Screenshot 18 — Git Status Modified  
-Detected that file1.txt is modified after changes.
+---
 
-### Screenshot 19 — Git Diff  
-Displayed exact line-by-line changes before committing.
+### Screenshot 07 — Git Add README
+![Screenshot 07](Screenshots/07_git_add_readme.png)
 
-### Screenshot 20 — Git Add Modified File  
-Staged updated file after modifications.
+Staged `README.md`. This moves the file from the working directory into the staging area, preparing it for commit.
 
-### Screenshot 21 — Commit Updated File  
-Committed updated version of file1.txt.
+---
 
-### Screenshot 22 — Final Git Log  
-Verified full commit history, confirming all changes were successfully tracked.
+### Screenshot 08 — Git Status (Staged)
+![Screenshot 08](Screenshots/08_git_status_staged.png)
+
+Confirmed that `README.md` is staged and ready to be committed.
+
+---
+
+### Screenshot 09 — First Commit
+![Screenshot 09](Screenshots/09_git_commit.png)
+
+Created the initial commit. This establishes the first snapshot in the repository’s history.
+
+---
+
+### Screenshot 10 — Git Log
+![Screenshot 10](Screenshots/10_git_log.png)
+
+Displayed commit history using `git log --oneline`, showing commit hashes and messages in a compact format.
+
+---
+
+### Screenshot 11 — Create file1.txt
+![Screenshot 11](Screenshots/11_create_file1.png)
+
+Created a new file (`file1.txt`) and added initial content using the `echo` command.
+
+---
+
+### Screenshot 12 — Git Status New File
+![Screenshot 12](Screenshots/12_git_status_new_file.png)
+
+Verified that `file1.txt` appears as an untracked file.
+
+---
+
+### Screenshot 13 — Git Add file1.txt
+![Screenshot 13](Screenshots/13_git_add_file1.png)
+
+Staged `file1.txt`, preparing it to be committed.
+
+---
+
+### Screenshot 14 — Git Status After Add
+![Screenshot 14](Screenshots/14_git_status_after_add.png)
+
+Confirmed that `file1.txt` is staged and ready for commit.
+
+---
+
+### Screenshot 15 — Commit file1.txt
+![Screenshot 15](Screenshots/15_git_commit_file1.png)
+
+Committed `file1.txt`, creating a new snapshot in the repository.
+
+---
+
+### Screenshot 16 — Git Log (Two Commits)
+![Screenshot 16](Screenshots/16_git_log_two_commits.png)
+
+Verified that the repository now contains multiple commits, showing version history progression.
+
+---
+
+### Screenshot 17 — Modify File
+![Screenshot 17](Screenshots/17_modify_file1.png)
+
+Modified `file1.txt` by appending new content using `>>`, demonstrating file updates.
+
+---
+
+### Screenshot 18 — Git Status Modified File
+![Screenshot 18](Screenshots/18_git_status_modified_file.png)
+
+Detected that `file1.txt` is modified but not yet staged.
+
+---
+
+### Screenshot 19 — Git Diff Output
+![Screenshot 19](Screenshots/19_git_diff_output.png)
+
+Displayed exact line-by-line changes using `git diff`. This is critical for reviewing changes before committing.
+
+---
+
+### Screenshot 20 — Git Add Modified File
+![Screenshot 20](Screenshots/20_git_add_modified_file.png)
+
+Staged the modified version of `file1.txt`.
+
+---
+
+### Screenshot 21 — Commit Updated File
+![Screenshot 21](Screenshots/21_git_commit_updated_file.png)
+
+Committed the updated file, adding another version snapshot to history.
+
+---
+
+### Screenshot 22 — Final Git Log
+![Screenshot 22](Screenshots/22_git_log_final.png)
+
+Verified the complete commit history, confirming all changes were successfully tracked and recorded.
 
 ---
 
