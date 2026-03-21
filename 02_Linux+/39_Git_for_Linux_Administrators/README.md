@@ -35,135 +35,87 @@ This lab demonstrates a complete Git workflow used in real-world DevOps, cloud, 
 ---
 
 ### 📁 Directory Setup
-
 ```bash
 mkdir -p ~/IT_Labs/02_Linux+/39_Git_for_Linux_Administrators/Screenshots
-```
-Creates the full directory structure, including parent folders if they do not already exist.
-
-```bash
 cd ~/IT_Labs/02_Linux+/39_Git_for_Linux_Administrators
-```
-Changes into the lab directory.
-
-```bash
 pwd
 ```
-Displays the current working directory to confirm correct location.
+- Creates full directory structure (including parent folders if needed)  
+- Navigates into lab directory  
+- Confirms current working path  
 
 ---
 
 ### ⚙️ Git Installation & Configuration
-
 ```bash
 git --version
-```
-Displays the installed Git version to confirm availability.
-
-```bash
 git config --global user.name "John Keating"
-```
-Sets the global Git username used for commit authorship.
-
-```bash
 git config --global user.email "your_email@example.com"
-```
-Sets the global Git email address used for commit tracking.
-
-```bash
 git config --list
 ```
-Displays all current Git configuration settings.
+- Verifies Git is installed  
+- Sets global username for commit authorship  
+- Sets global email for tracking commits  
+- Displays current Git configuration  
 
 ---
 
 ### 🗂️ Repository Initialization
-
 ```bash
 git init
-```
-Initializes a new Git repository and creates the hidden `.git` directory for version tracking.
-
-```bash
 touch README.md
 ```
-Creates an empty README.md file.
+- Initializes a new Git repository and creates `.git` directory  
+- Creates an empty README.md file  
 
 ---
 
-### 📊 File Tracking & Status
-
+### 📊 File Tracking & Commits
 ```bash
 git status
-```
-Shows the current repository state, including untracked, staged, and modified files.
-
-```bash
 git add README.md
-```
-Stages the README.md file for commit.
-
-```bash
 git commit -m "Initial commit - added README"
-```
-Creates the first commit and stores a snapshot of the repository.
-
-```bash
 git log --oneline
 ```
-Displays commit history in a compact, single-line format.
+- Displays file tracking status (untracked, staged, modified)  
+- Stages README.md for commit  
+- Creates first commit snapshot  
+- Shows commit history in compact format  
 
 ---
 
-### 📄 Working with Files
-
+### 📄 File Creation & Versioning
 ```bash
 echo "Git Lab File" > file1.txt
-```
-Creates `file1.txt` and writes content to it (overwrites existing content if the file exists).
-
-```bash
 git add file1.txt
-```
-Stages file1.txt for commit.
-
-```bash
 git commit -m "Added file1.txt"
 ```
-Commits the new file to the repository.
-
-```bash
-echo "Adding more content" >> file1.txt
-```
-Appends additional content to file1.txt without overwriting existing data.
+- Creates new file and writes content (overwrites if exists)  
+- Stages new file  
+- Commits file to repository  
 
 ---
 
-### 🔍 Reviewing Changes
-
+### ✏️ File Modification & Change Tracking
 ```bash
+echo "Adding more content" >> file1.txt
 git diff
-```
-Displays line-by-line differences between the working directory and the last commit.
-
-```bash
 git add file1.txt
-```
-Stages modified changes.
-
-```bash
 git commit -m "Updated file1.txt with more content"
 ```
-Commits updated changes to the repository.
+- Appends new content without overwriting  
+- Displays exact changes before committing  
+- Stages modified file  
+- Commits updated version  
 
 ---
 
 ### 🧹 Terminal Management
-
 ```bash
 clear
 ```
-Clears the terminal screen to improve readability during the lab.
+- Clears terminal output for better readability  
+
 ---
 
 ## 🔍 Command Breakdown Examples
