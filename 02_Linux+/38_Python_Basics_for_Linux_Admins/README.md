@@ -58,28 +58,28 @@ Created the lab directory structure inside the Linux VM to ensure scripts run in
 ---
 
 ### Screenshot 02 — Python Installation Check
-![Screenshot](Screenshots/02_python_version.png)
+![Screenshot](Screenshots/02_check_python_version.png)
 
 Verified Python 3 is installed and available for scripting.
 
 ---
 
 ### Screenshot 03 — Hello World Script
-![Screenshot](Screenshots/03_hello_world.png)
+![Screenshot](Screenshots/03_hello_world_script.png)
 
 Created and executed a basic Python script to confirm the environment is working.
 
 ---
 
 ### Screenshot 04 — Variables Script
-![Screenshot](Screenshots/04_variables.png)
+![Screenshot](Screenshots/04_python_variables.png)
 
 Defined variables (name and role) and printed them, demonstrating basic data handling.
 
 ---
 
 ### Screenshot 05 — User Input Script
-![Screenshot](Screenshots/05_user_input.png)
+![Screenshot](Screenshots/05_user_input_script.png)
 
 Used `input()` to capture user input and display dynamic output.
 
@@ -93,7 +93,7 @@ Implemented conditional logic to determine if the user is an adult based on inpu
 ---
 
 ### Screenshot 07 — Loop Script
-![Screenshot](Screenshots/07_loop.png)
+![Screenshot](Screenshots/07_loop_script.png)
 
 Used a loop to repeat actions, demonstrating iteration and automation.
 
