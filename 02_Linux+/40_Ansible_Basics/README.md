@@ -141,43 +141,43 @@ ansible-playbook -i inventory.ini first_playbook.yml
 ## 🖼️ Screenshots (With Explanations)
 
 ### Screenshot 1 — Directory Setup
-
+![Screenshot 1](Screenshots/01_lab_directory_setup.png)
 Shows creation of lab directory and navigation into the correct path.
 
 ### Screenshot 2 — Ansible Not Installed
-
+![Screenshot 2](Screenshots/02_ansible_not_installed.png)
 Shows system response indicating Ansible is not installed.
 
 ### Screenshot 3 — Package Update
-
+![Screenshot 3](Screenshots/03_apt_update.png)
 Shows system updating package lists from repositories.
 
 ### Screenshot 4 — Installing Ansible
-
+![Screenshot 4](Screenshots/04_ansible_install.png)
 Shows installation of Ansible and dependencies.
 
 ### Screenshot 5 — Version Verification
-
+![Screenshot 5](Screenshots/05_ansible_installed_version.png)
 Confirms Ansible installation and displays version information.
 
-### Screenshot 6 — Inventory Test (Ping)
+### Screenshot 6 — Inventory File
+![Screenshot 6](Screenshots/06_inventory_file.png)
+Shows creation and configuration of the Ansible inventory file.
 
-Shows successful Ansible communication with localhost (`pong` response).
+### Screenshot 7 — Inventory Test (Ping)
+![Screenshot 7](Screenshots/07_ansible_ping_success.png)
+Shows successful Ansible communication with localhost (pong response).
 
-### Screenshot 7 — Playbook Creation
-
+### Screenshot 8 — Playbook Creation
+![Screenshot 8](Screenshots/08_playbook_created.png)
 Displays YAML playbook defining automation tasks.
 
-### Screenshot 8 — Playbook Execution
-
+### Screenshot 9 — Playbook Execution
+![Screenshot 9](Screenshots/09_playbook_execution.png)
 Shows Ansible running tasks including file creation and modification.
 
-### Screenshot 9 — Play Recap
-
-Displays summary of tasks executed successfully.
-
 ### Screenshot 10 — File Verification
-
+![Screenshot 10](Screenshots/10_verify_file_created_clean.png)
 Shows the contents of the file created and modified by Ansible.
 
 ---
