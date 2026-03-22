@@ -92,53 +92,74 @@ sudo usermod -aG docker $USER
 ---
 
 ### 01_directory_setup.png
-Shows the Windows lab folder structure including the Screenshots folder and README.md file. This demonstrates proper lab organization and preparation for documentation.
+![01_directory_setup](Screenshots/01_directory_setup.png)
+
+This screenshot shows the Windows lab folder structure for the Container Management lab. It includes the Screenshots directory and README.md file. This demonstrates proper lab organization, ensuring all documentation and visual evidence are structured in a professional and reproducible format for GitHub.
 
 ---
 
 ### 02_navigate_to_lab_directory.png
-Displays navigation to the Linux lab directory using `cd`, verification with `pwd`, and directory listing with `ls`. This confirms correct working directory.
+![02_navigate_to_lab_directory](Screenshots/02_navigate_to_lab_directory.png)
+
+This screenshot displays navigation to the Linux lab directory using the `cd` command. The `pwd` command confirms the current working directory, and `ls` verifies the presence of existing lab folders. This step ensures the user is operating in the correct directory before performing lab tasks.
 
 ---
 
 ### 03_create_lab_directory.png
-Shows creation of the lab directory using `mkdir` and verification using `ls`. This confirms successful directory creation in Linux.
+![03_create_lab_directory](Screenshots/03_create_lab_directory.png)
+
+This screenshot shows the creation of the lab directory using the `mkdir` command. The directory is named according to the structured lab naming convention. The `ls` command verifies that the directory was successfully created, demonstrating proper filesystem management in Linux.
 
 ---
 
 ### 04_enter_lab_directory.png
-Displays entering the lab directory and confirming the path with `pwd`. The empty `ls` output confirms a clean working directory.
+![04_enter_lab_directory](Screenshots/04_enter_lab_directory.png)
+
+This screenshot shows entering the newly created lab directory using the `cd` command. The `pwd` output confirms the correct path, and the empty `ls` output verifies a clean working directory. This ensures a controlled environment for lab execution.
 
 ---
 
 ### 05_install_docker.png
-Shows updating package lists and installing Docker using `apt`. Output confirms Docker is installed and ready.
+![05_install_docker](Screenshots/05_install_docker.png)
+
+This screenshot shows updating package lists using `sudo apt update` followed by installing Docker using `sudo apt install docker.io`. The output confirms successful installation and package management operations, demonstrating how Linux administrators install container runtime software.
 
 ---
 
 ### 06_verify_docker_installation.png
-Displays Docker version and service status. The "active (running)" status confirms Docker daemon is operational.
+![06_verify_docker_installation](Screenshots/06_verify_docker_installation.png)
+
+This screenshot displays verification of Docker installation using `docker --version` and `systemctl status docker`. The “active (running)” status confirms that the Docker daemon is operational. This step ensures the container engine is properly installed and running.
 
 ---
 
 ### 07_fix_docker_permissions.png
-Shows adding the user to the Docker group and verifying Docker can run without sudo. This is critical for proper user-level container management.
+![07_fix_docker_permissions](Screenshots/07_fix_docker_permissions.png)
+
+This screenshot shows adding the current user to the Docker group using `usermod -aG docker $USER` and applying the change with `newgrp docker`. The `docker ps` command runs successfully without sudo, confirming proper permission configuration for non-root Docker usage.
 
 ---
 
 ### 08_run_first_container.png
-Displays running the `hello-world` container. The output confirms Docker can pull images, create containers, and execute workloads.
+![08_run_first_container](Screenshots/08_run_first_container.png)
+
+This screenshot shows running the `hello-world` container using `docker run hello-world`. The output confirms that Docker successfully pulled the image, created a container, and executed it. This validates that the Docker engine is fully functional.
 
 ---
 
 ### 09_list_containers_and_images.png
-Shows listing all containers and images. Demonstrates visibility into container lifecycle and image management.
+![09_list_containers_and_images](Screenshots/09_list_containers_and_images.png)
+
+This screenshot displays `docker ps -a` and `docker images`. It shows all containers (including exited ones) and locally stored images. This demonstrates how administrators inspect container lifecycle states and manage image repositories.
 
 ---
 
 ### 10_remove_container_and_image.png
-Displays removal of containers and images. Confirms ability to clean up Docker resources, which is essential in production environments.
+![10_remove_container_and_image](Screenshots/10_remove_container_and_image.png)
 
+This screenshot shows removing containers using `docker rm` followed by removing the image using `docker rmi hello-world`. The output confirms successful cleanup. This demonstrates proper container and image lifecycle management, which is critical in production environments to conserve system resources.
+
+---
 ---
 
 ## Key Concepts
