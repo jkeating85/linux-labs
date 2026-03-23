@@ -122,7 +122,7 @@ This screenshot shows the successful removal of the original container while pre
 This screenshot shows a new container being launched with the same Docker volume attached. This is a key step in validating storage reuse across container instances.
 
 ### 09. Verify Persisted Data in New Container
-![09_verify_volume_persistence.png](Screenshots/09_verify_volume_persistence.png)
+![09_verify_volume_persistence.png](Screenshots/09_verify_volume_persistance.png)
 
 This screenshot confirms that the data stored in the volume remained available in the newly created container. This demonstrates storage independence from the original container lifecycle.
 
