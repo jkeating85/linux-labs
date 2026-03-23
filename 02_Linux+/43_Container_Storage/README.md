@@ -81,86 +81,120 @@ docker run -it --name storage_test -v my_volume:/data ubuntu bash
 
 ## Screenshots
 
-### 01. Enter Lab Directory
+---
+
+### Screenshot 01 – Enter Lab Directory
 ![01_enter_lab_directory.png](Screenshots/01_enter_lab_directory.png)
 
-This screenshot shows the Linux terminal successfully navigating into the `43_Container_Storage` lab directory. This confirms the working directory was prepared correctly before beginning Docker storage operations.
+This screenshot shows navigating into the lab directory `43_Container_Storage`. This step ensures that all commands, files, and screenshots are organized within the correct project structure. Maintaining a structured directory layout is important in real-world environments because it improves workflow organization, version control clarity, and collaboration efficiency.
 
-### 02. List Docker Volumes
+---
+
+### Screenshot 02 – List Docker Volumes
 ![02_list_docker_volumes.png](Screenshots/02_list_docker_volumes.png)
 
-This screenshot shows the initial Docker volume list before any new storage resources were created. It establishes the baseline state of the environment.
+This output displays all existing Docker volumes on the system. At this stage, it confirms whether any volumes already exist before creating a new one. This is an important verification step because it provides visibility into current storage resources and prevents conflicts or confusion when managing multiple volumes in production environments.
 
-### 03. Create Docker Volume
+---
+
+### Screenshot 03 – Create Docker Volume
 ![03_create_docker_volume.png](Screenshots/03_create_docker_volume.png)
 
-This screenshot shows the creation of the Docker volume `my_volume` and confirms it now appears in the Docker volume list. This demonstrates the successful creation of persistent storage.
+This screenshot shows the successful creation of a Docker volume named `my_volume`. Docker volumes are designed to store persistent data outside of containers. This means that even if a container is deleted, the data stored in the volume will remain intact. This is critical for real-world applications such as databases, logs, and application state storage.
 
-### 04. Inspect Docker Volume
+---
+
+### Screenshot 04 – Inspect Docker Volume
 ![04_inspect_docker_volume.png](Screenshots/04_inspect_docker_volume.png)
 
-This screenshot shows detailed information about the Docker volume, including the driver and mountpoint on the host system. It confirms where Docker stores the volume data outside the container lifecycle.
+This output shows detailed metadata about the Docker volume, including its mount point on the host system. This confirms where Docker physically stores the volume data. Understanding this is important for troubleshooting, backups, and system-level storage management in enterprise environments.
 
-### 05. Write Data to Volume
+---
+
+### Screenshot 05 – Write Data to Volume
 ![05_write_data_to_volume.png](Screenshots/05_write_data_to_volume.png)
 
-This screenshot shows data being written to `/data/testfile.txt` inside the container and then immediately read back. Because `/data` is backed by a Docker volume, this data is stored persistently.
+This screenshot shows data being written to `/data/testfile.txt` inside the container. The `/data` directory is mapped to the Docker volume, meaning the data is not stored inside the container itself but in the persistent volume. This demonstrates how applications can write data that survives container lifecycle events.
 
-### 06. Verify Volume Persistence
-![06_verify_volume_persistence.png](Screenshots/06_verify_volume_persistence.png)
+---
 
-This screenshot confirms that the file still exists after the original container was removed and a new container mounted the same volume. This proves Docker volume persistence.
+### Screenshot 06 – Exit Container
+![06_exit_container.png](Screenshots/06_exit_container.png)
 
-### 07. Remove Original Container
+This screenshot shows exiting the running container after writing data to the volume. Exiting the container simulates a container shutdown event. The key concept here is that while the container stops, the Docker volume remains unaffected. This separation between container lifecycle and storage is fundamental to Docker's architecture.
+
+---
+
+### Screenshot 07 – Remove Original Container
 ![07_remove_container.png](Screenshots/07_remove_container.png)
 
-This screenshot shows the successful removal of the original container while preserving the Docker volume. It demonstrates that storage can survive container deletion.
+This screenshot shows the removal of the original container. This step is critical because it demonstrates that containers are disposable. Even after deleting the container, the data stored in the Docker volume is preserved. This behavior is essential for stateless container design patterns used in modern cloud-native applications.
 
-### 08. Start New Container
+---
+
+### Screenshot 08 – Start New Container
 ![08_start_new_container.png](Screenshots/08_start_new_container.png)
 
-This screenshot shows a new container being launched with the same Docker volume attached. This is a key step in validating storage reuse across container instances.
+This screenshot shows a new container being created and started using the same Docker volume. This demonstrates how volumes can be reused across multiple containers. This is a key feature in microservices architectures where multiple services may need access to shared persistent data.
 
-### 09. Verify Persisted Data in New Container
-![09_verify_volume_persistence.png](Screenshots/09_verify_volume_persistance.png)
+---
 
-This screenshot confirms that the data stored in the volume remained available in the newly created container. This demonstrates storage independence from the original container lifecycle.
+### Screenshot 09 – Verify Volume Persistence
+![09_verify_volume_persistence.png](Screenshots/09_verify_volume_persistence.png)
 
-### 10. Container One Writes Shared Data
+This screenshot confirms that the data written in the previous container still exists after the original container was removed. This proves that Docker volumes persist independently of containers. This concept is critical for maintaining application data across deployments, updates, and container restarts.
+
+---
+
+### Screenshot 10 – Write Data (Container One)
 ![10_container_one_write.png](Screenshots/10_container_one_write.png)
 
-This screenshot shows `container_one` writing shared data into the mounted Docker volume. It demonstrates how one container can populate shared persistent storage.
+This screenshot shows data being written from the first container into the shared Docker volume. This demonstrates that containers can actively modify shared storage. This is important for workflows where one service writes data that another service will later consume.
 
-### 11. Container Two Starts with Same Volume
+---
+
+### Screenshot 11 – Start Second Container
 ![11_container_two_start.png](Screenshots/11_container_two_start.png)
 
-This screenshot shows `container_two` starting with the same volume mounted at `/data`. This sets up the validation of shared storage across multiple containers.
+This screenshot shows a second container being launched with the same Docker volume attached. This highlights how Docker allows multiple containers to access the same persistent storage, enabling inter-container communication through shared files.
 
-### 12. Container Two Reads Shared Data
+---
+
+### Screenshot 12 – Read Shared Data (Container Two)
 ![12_container_two_read_shared_data.png](Screenshots/12_container_two_read_shared_data.png)
 
-This screenshot confirms that `container_two` can read data originally written by `container_one`. This demonstrates shared, persistent storage across containers.
+This screenshot demonstrates that the second container can read the data written by the first container. This confirms that Docker volumes enable shared, persistent storage across containers. This is a foundational concept for distributed systems, logging pipelines, and shared data services.
 
-### 13. Cleanup Containers
+---
+
+### Screenshot 13 – Remove Containers
 ![13_cleanup_containers.png](Screenshots/13_cleanup_containers.png)
 
-This screenshot shows the removal of the temporary lab containers used during the storage test. This is good operational hygiene and helps keep the environment clean.
+This screenshot shows all containers being removed as part of the cleanup process. Cleaning up unused containers is important for maintaining a clean and efficient working environment and preventing unnecessary resource consumption.
 
-### 14. Verify Cleanup
+---
+
+### Screenshot 14 – Verify No Containers Remain
 ![14_verify_cleanup.png](Screenshots/14_verify_cleanup.png)
 
-This screenshot shows the result of `docker ps -a` after cleanup, confirming that the targeted lab containers were removed successfully.
+This output confirms that all containers have been successfully removed. The empty result from `docker ps -a` indicates a clean environment. This step ensures that no leftover containers remain that could interfere with future testing or deployments.
 
-### 15. Full Cleanup Complete
+---
+
+### Screenshot 15 – Full Cleanup Complete
 ![15_full_cleanup_complete.png](Screenshots/15_full_cleanup_complete.png)
 
-This screenshot verifies that no containers remain in the lab environment, confirming full cleanup of all containers involved in the exercise.
+This screenshot verifies that the system has been fully cleaned of containers. This step reinforces good operational practices by ensuring that temporary resources are removed after use.
 
-### 16. Volume Removed and Verified
+---
+
+### Screenshot 16 – Remove Volume and Verify
 ![16_volume_removed_and_verified.png](Screenshots/16_volume_removed_and_verified.png)
 
-This screenshot confirms that the Docker volume was successfully removed. The empty result from `docker volume ls` verifies that no volumes remain. Proper cleanup is important because Docker volumes persist independently of containers and can consume disk space if not removed.
+This output confirms that the Docker volume was successfully removed. The empty result from `docker volume ls` verifies that no volumes remain.
 
+**README EXPLANATION (USE THIS)**  
+This output confirms that the Docker volume was successfully removed. The empty result from `docker volume ls` verifies that no volumes remain. Proper cleanup of volumes is important because Docker volumes persist independently of containers and can consume disk space if not removed.
 ---
 
 ## Key Concepts
