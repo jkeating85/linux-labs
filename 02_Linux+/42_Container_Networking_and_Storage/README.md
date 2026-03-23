@@ -99,7 +99,7 @@ In this lab, I:
 
 ### 01_enter_lab_directory.png
 
-![01](./screenshots/01_enter_lab_directory.png)
+![01](./Screenshots/01_enter_lab_directory.png)
 
 This shows navigation into the lab directory, confirming the correct working environment before executing Docker commands.
 
@@ -107,7 +107,7 @@ This shows navigation into the lab directory, confirming the correct working env
 
 ### 02_list_docker_networks.png
 
-![02](./screenshots/02_list_docker_networks.png)
+![02](./Screenshots/02_list_docker_networks.png)
 
 This displays all existing Docker networks including default bridge, host, and none networks.
 
@@ -115,7 +115,7 @@ This displays all existing Docker networks including default bridge, host, and n
 
 ### 03_create_custom_network.png
 
-![03](./screenshots/03_create_custom_network.png)
+![03](./Screenshots/03_create_custom_network.png)
 
 This shows the creation of a custom Docker bridge network used for container isolation.
 
@@ -123,7 +123,7 @@ This shows the creation of a custom Docker bridge network used for container iso
 
 ### 04_verify_custom_network.png
 
-![04](./screenshots/04_verify_custom_network.png)
+![04](./Screenshots/04_verify_custom_network.png)
 
 This confirms the custom network exists after creation.
 
@@ -131,7 +131,7 @@ This confirms the custom network exists after creation.
 
 ### 05_run_container_on_network.png
 
-![05](./screenshots/05_run_container_on_network.png)
+![05](./Screenshots/05_run_container_on_network.png)
 
 This shows the container being launched on the custom network.
 
@@ -139,7 +139,7 @@ This shows the container being launched on the custom network.
 
 ### 06_verify_running_container.png
 
-![06](./screenshots/06_verify_running_container.png)
+![06](./Screenshots/06_verify_running_container.png)
 
 This confirms the container is actively running using `docker ps`.
 
@@ -147,7 +147,7 @@ This confirms the container is actively running using `docker ps`.
 
 ### 07_inspect_network.png
 
-![07](./screenshots/07_inspect_network.png)
+![07](./Screenshots/07_inspect_network.png)
 
 This shows detailed JSON output of the Docker network including subnet and gateway configuration.
 
@@ -155,7 +155,7 @@ This shows detailed JSON output of the Docker network including subnet and gatew
 
 ### 08_enter_container_shell.png
 
-![08](./screenshots/08_enter_container_shell.png)
+![08](./Screenshots/08_enter_container_shell.png)
 
 This demonstrates entering the container interactively using `docker exec`.
 
@@ -163,7 +163,7 @@ This demonstrates entering the container interactively using `docker exec`.
 
 ### 09_install_iproute2.png
 
-![09](./screenshots/09_install_iproute2.png)
+![09](./Screenshots/09_install_iproute2.png)
 
 This shows installation of networking tools inside the container.
 
@@ -171,7 +171,7 @@ This shows installation of networking tools inside the container.
 
 ### 10_container_ip_address.png
 
-![10](./screenshots/10_container_ip_address.png)
+![10](./Screenshots/10_container_ip_address.png)
 
 This confirms the container’s internal IP using `ip a`.
 
@@ -179,7 +179,7 @@ This confirms the container’s internal IP using `ip a`.
 
 ### 11_container_inspect_summary.png
 
-![11](./screenshots/11_container_inspect_summary.png)
+![11](./Screenshots/11_container_inspect_summary.png)
 
 This shows container configuration details including status and runtime settings.
 
@@ -187,7 +187,7 @@ This shows container configuration details including status and runtime settings
 
 ### 12_nginx_localhost_test.png
 
-![12](./screenshots/12_nginx_localhost_test.png)
+![12](./Screenshots/12_nginx_localhost_test.png)
 
 This confirms NGINX is running by displaying HTML output from `curl localhost`.
 
@@ -195,7 +195,7 @@ This confirms NGINX is running by displaying HTML output from `curl localhost`.
 
 ### 13_verify_container_running.png
 
-![13](./screenshots/13_verify_container_running.png)
+![13](./Screenshots/13_verify_container_running.png)
 
 This verifies the container is still running from the host system.
 
@@ -203,7 +203,7 @@ This verifies the container is still running from the host system.
 
 ### 14_list_docker_networks.png
 
-![14](./screenshots/14_list_docker_networks.png)
+![14](./Screenshots/14_list_docker_networks.png)
 
 This reconfirms available Docker networks including the custom network.
 
@@ -211,7 +211,7 @@ This reconfirms available Docker networks including the custom network.
 
 ### 15_inspect_custom_network.png
 
-![15](./screenshots/15_inspect_custom_network.png)
+![15](./Screenshots/15_inspect_custom_network.png)
 
 This shows detailed configuration of the custom network including IP range.
 
@@ -219,7 +219,7 @@ This shows detailed configuration of the custom network including IP range.
 
 ### 16_verify_container_ip.png
 
-![16](./screenshots/16_verify_container_ip.png)
+![16](./Screenshots/16_verify_container_ip.png)
 
 This confirms the container IP address from the host using `docker inspect`.
 
@@ -227,7 +227,7 @@ This confirms the container IP address from the host using `docker inspect`.
 
 ### 17_stop_container.png
 
-![17](./screenshots/17_stop_container.png)
+![17](./Screenshots/17_stop_container.png)
 
 This shows the container being stopped using `docker stop`.
 
@@ -235,7 +235,7 @@ This shows the container being stopped using `docker stop`.
 
 ### 18_verify_container_stopped.png
 
-![18](./screenshots/18_verify_container_stopped.png)
+![18](./Screenshots/18_verify_container_stopped.png)
 
 This confirms the container status is **Exited**, verifying proper shutdown.
 
