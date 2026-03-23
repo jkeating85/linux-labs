@@ -140,7 +140,7 @@ This screenshot shows a new container being created and started using the same D
 ---
 
 ### Screenshot 09 – Verify Volume Persistence
-![09_verify_volume_persistence.png](Screenshots/09_verify_volume_persistence.png)
+![09_verify_volume_persistence.png](Screenshots/09_verify_volume_persistance.png)
 
 This screenshot confirms that the data written in the previous container still exists after the original container was removed. This proves that Docker volumes persist independently of containers. This concept is critical for maintaining application data across deployments, updates, and container restarts.
 
