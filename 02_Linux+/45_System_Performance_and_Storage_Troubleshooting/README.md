@@ -195,155 +195,157 @@ Displays:
 
 ---
 
-## Screenshot 01
+### Screenshot 01 — Lab 45 Folder Structure
 
-![01_lab_45_folder_structure](screenshots/01_lab_45_folder_structure.png)
+![01_lab_45_folder_structure](Screenshots/01_lab_45_folder_structure.png)
 
-This screenshot shows the folder structure created for Linux+ Lab 45. This demonstrates proper lab organization and professional documentation practices used in enterprise environments.
-
----
-
-## Screenshot 02
-
-![02_initial_system_health_check](screenshots/02_initial_system_health_check.png)
-
-This screenshot shows the initial system health check using Linux monitoring commands. This allows administrators to quickly identify performance issues.
+This screenshot displays the initial folder structure created for Linux+ Lab 45. The directory includes the Screenshots folder and README.md file. Maintaining a consistent folder structure is important for professional documentation and GitHub portfolio organization. This structure mirrors real-world engineering documentation standards where logs, screenshots, and documentation are separated and organized clearly. This approach improves readability, troubleshooting efficiency, and long-term maintainability.
 
 ---
 
-## Screenshot 03
+### Screenshot 02 — Initial System Health Check
 
-![03_top_live_process_monitor](screenshots/03_top_live_process_monitor.png)
+![02_initial_system_health_check](Screenshots/02_initial_system_health_check.png)
 
-This screenshot shows the top command running. The top command provides a real-time view of CPU usage, memory usage, and running processes.
-
----
-
-## Screenshot 04
-
-![04_install_htop](screenshots/04_install_htop.png)
-
-This screenshot shows the installation of htop using apt package manager. This demonstrates installing troubleshooting tools.
+This screenshot shows the initial system health check performed before troubleshooting. Establishing a baseline is a critical troubleshooting step because it allows administrators to compare system performance before and after changes. This helps identify abnormal CPU usage, memory consumption, and system load. Linux administrators commonly perform this step to detect performance bottlenecks early.
 
 ---
 
-## Screenshot 05
+### Screenshot 03 — Top Live Process Monitor
 
-![05_htop_system_monitor](screenshots/05_htop_system_monitor.png)
+![03_top_live_process_monitor](Screenshots/03_top_live_process_monitor.png)
 
-This screenshot shows htop running. It provides advanced system monitoring with CPU graphs and memory usage.
-
----
-
-## Screenshot 06
-
-![06_iostat_disk_usage](screenshots/06_iostat_disk_usage.png)
-
-This screenshot shows disk performance using iostat. This helps diagnose storage bottlenecks.
+This screenshot shows the `top` command running in real time. The top utility displays CPU usage, memory usage, running processes, and system load averages. This tool is frequently used by Linux administrators for performance monitoring and troubleshooting. The real-time nature of the output allows administrators to detect spikes in resource usage and identify problematic processes.
 
 ---
 
-## Screenshot 07
+### Screenshot 04 — Install htop
 
-![07_df_disk_filesystem_usage](screenshots/07_df_disk_filesystem_usage.png)
+![04_install_htop](Screenshots/04_install_htop.png)
 
-This screenshot shows filesystem disk usage using df -h.
-
----
-
-## Screenshot 08
-
-![08_memory_and_vmstat_usage](screenshots/08_memory_and_vmstat_usage.png)
-
-This screenshot shows virtual memory usage using vmstat.
+This screenshot displays the installation of `htop`, which is an advanced interactive process viewer. Installing monitoring tools is common when administrators require more detailed performance insights. The htop utility provides color-coded output, improved navigation, and better readability compared to top.
 
 ---
 
-## Screenshot 09
+### Screenshot 05 — htop System Monitor
 
-![09_mpstat_cpu_statistics](screenshots/09_mpstat_cpu_statistics.png)
+![05_htop_system_monitor](Screenshots/05_htop_system_monitor.png)
 
-This screenshot shows CPU statistics using mpstat.
-
----
-
-## Screenshot 10
-
-![10_vmstat_live_performance](screenshots/10_vmstat_live_performance.png)
-
-This screenshot shows live system performance monitoring.
+This screenshot shows the `htop` system monitoring interface. It displays CPU utilization, memory usage, swap usage, and running processes. Administrators use htop to identify high-resource processes quickly and troubleshoot performance issues.
 
 ---
 
-## Screenshot 11
+### Screenshot 06 — iostat Disk Usage
 
-![11_top_cpu_processes](screenshots/11_top_cpu_processes.png)
+![06_iostat_disk_usage](Screenshots/06_iostat_disk_usage.png)
 
-This screenshot shows CPU intensive processes.
-
----
-
-## Screenshot 12
-
-![12_top_memory_processes](screenshots/12_top_memory_processes.png)
-
-This screenshot shows memory intensive processes.
+This screenshot displays disk usage statistics using `iostat`. The iostat command is used to monitor disk input/output performance. This helps administrators detect disk bottlenecks and identify slow storage devices.
 
 ---
 
-## Screenshot 13
+### Screenshot 07 — df Disk Filesystem Usage
 
-![13_disk_usage_df](screenshots/13_disk_usage_df.png)
+![07_df_disk_filesystem_usage](Screenshots/07_df_disk_filesystem_usage.png)
 
-This screenshot shows disk usage information.
-
----
-
-## Screenshot 14
-
-![14_directory_disk_usage](screenshots/14_directory_disk_usage.png)
-
-This screenshot shows directory disk usage using du.
+This screenshot shows disk space usage using `df -h`. This command displays available storage space across mounted filesystems. Administrators use this command to ensure systems do not run out of storage.
 
 ---
 
-## Screenshot 15
+### Screenshot 08 — Memory and vmstat Usage
 
-![15_iostat_disk_performance](screenshots/15_iostat_disk_performance.png)
+![08_memory_and_vmstat_usage](Screenshots/08_memory_and_vmstat_usage.png)
 
-This screenshot shows disk IO performance.
-
----
-
-## Screenshot 16
-
-![16_system_load_uptime](screenshots/16_system_load_uptime.png)
-
-This screenshot shows system load using uptime.
+This screenshot displays memory and system performance statistics using `vmstat`. This tool provides information about CPU, memory, and system processes.
 
 ---
 
-## Screenshot 17
+### Screenshot 09 — mpstat CPU Statistics
 
-![17_top_interactive_monitor](screenshots/17_top_interactive_monitor.png)
+![09_mpstat_cpu_statistics](Screenshots/09_mpstat_cpu_statistics.png)
 
-This screenshot shows interactive top monitoring.
-
----
-
-## Screenshot 18
-
-![18_memory_usage_free](screenshots/18_memory_usage_free.png)
-
-This screenshot shows memory usage using free -h.
+This screenshot shows CPU statistics using `mpstat`. This command displays CPU usage per processor core.
 
 ---
 
-## Screenshot 19
+### Screenshot 10 — vmstat Live Performance
 
-![19_system_information_uname](screenshots/19_system_information_uname.png)
+![10_vmstat_live_performance](Screenshots/10_vmstat_live_performance.png)
 
-This screenshot shows system information using uname -a.
+This screenshot shows real-time performance monitoring using `vmstat`.
+
+---
+
+### Screenshot 11 — Top CPU Processes
+
+![11_top_cpu_processes](Screenshots/11_top_cpu_processes.png)
+
+This screenshot displays processes using the most CPU resources.
+
+---
+
+### Screenshot 12 — Top Memory Processes
+
+![12_top_memory_processes](Screenshots/12_top_memory_processes.png)
+
+This screenshot shows processes using the most memory.
+
+---
+
+### Screenshot 13 — Disk Usage df
+
+![13_disk_usage_df](Screenshots/13_disk_usage_df.png)
+
+This screenshot displays disk usage statistics.
+
+---
+
+### Screenshot 14 — Directory Disk Usage
+
+![14_directory_disk_usage](Screenshots/14_directory_disk_usage.png)
+
+This screenshot shows directory-level disk usage.
+
+---
+
+### Screenshot 15 — iostat Disk Performance
+
+![15_iostat_disk_performance](Screenshots/15_iostat_disk_performance.png)
+
+This screenshot displays disk performance metrics.
+
+---
+
+### Screenshot 16 — System Load Uptime
+
+![16_system_load_uptime](Screenshots/16_system_load_uptime.png)
+
+This screenshot displays system load averages using uptime.
+
+---
+
+### Screenshot 17 — Top Interactive Monitor
+
+![17_top_interactive_monitor](Screenshots/17_top_interactive_monitor.png)
+
+This screenshot shows the interactive top monitor.
+
+---
+
+### Screenshot 18 — Memory Usage Free
+
+![18_memory_usage_free](Screenshots/18_memory_usage_free.png)
+
+This screenshot displays memory usage using free.
+
+---
+
+### Screenshot 19 — System Information uname
+
+![19_system_information_uname](Screenshots/19_system_information_uname.png)
+
+This screenshot displays system information using `uname -a`. This command shows kernel version, system architecture, and operating system details. Linux administrators commonly use this command when troubleshooting compatibility issues or verifying system configuration.
+
+---
 
 ---
 
