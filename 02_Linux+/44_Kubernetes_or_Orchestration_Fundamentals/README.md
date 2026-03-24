@@ -367,7 +367,7 @@ This screenshot shows Kubernetes-related containers being checked through the co
 This screenshot shows another `kubectl get nodes` check. This verifies whether the cluster API server is available and whether the node is properly registered.
 
 ### 33_kube_apiserver_debug.png
-![33_kube_apiserver_debug.png](Screenshots/33_kube_apiserver_debug.png)
+![33_kube_apiserver_debug.png](Screenshots/33_kube_apiservere_debug.png)
 
 This screenshot shows deeper API server troubleshooting. This reflects real-world Kubernetes debugging when control plane access is unstable.
 
