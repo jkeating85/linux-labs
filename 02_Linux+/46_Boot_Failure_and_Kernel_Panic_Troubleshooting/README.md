@@ -151,7 +151,7 @@ Organized folder structures improve troubleshooting workflows and documentation 
 
 ## 02_lab_46_directory_verification.png
 
-![02_lab_46_directory_verification](./02_lab_46_directory_verification.png)
+![02_lab_46_directory_verification](Screenshots/02_lab_46_directory_verification.png)
 
 This screenshot verifies working directory.
 
