@@ -140,7 +140,7 @@ Displays currently running kernel version.
 
 ## 01_lab_46_folder_structure.png
 
-![01_lab_46_folder_structure](./01_lab_46_folder_structure.png)
+![01_lab_46_folder_structure](Screenshots/01_lab_46_folder_structure.png)
 
 This screenshot shows the lab folder structure.
 
@@ -162,7 +162,7 @@ Confirming directories prevents executing commands in incorrect locations.
 
 ## 03_kernel_version_check.png
 
-![03_kernel_version_check](./03_kernel_version_check.png)
+![03_kernel_version_check](Screenshots/03_kernel_version_check.png)
 
 This screenshot shows kernel version.
 
@@ -173,7 +173,7 @@ Kernel version validation helps confirm compatibility and troubleshooting scope.
 
 ## 04_boot_directory_kernels.png
 
-![04_boot_directory_kernels](./04_boot_directory_kernels.png)
+![04_boot_directory_kernels](Screenshots/04_boot_directory_kernels.png)
 
 This screenshot shows kernel files in /boot.
 
@@ -184,7 +184,7 @@ Multiple kernels allow rollback and recovery during boot failures.
 
 ## 05_boot_logs_journalctl.png
 
-![05_boot_logs_journalctl](./05_boot_logs_journalctl.png)
+![05_boot_logs_journalctl](Screenshots/05_boot_logs_journalctl.png)
 
 This screenshot shows system boot logs.
 
@@ -195,7 +195,7 @@ Boot logs help identify failures during system startup.
 
 ## 06_boot_errors_filtered.png
 
-![06_boot_errors_filtered](./06_boot_errors_filtered.png)
+![06_boot_errors_filtered](Screenshots/06_boot_errors_filtered.png)
 
 This screenshot shows filtered boot errors.
 
@@ -206,7 +206,7 @@ Filtering errors speeds troubleshooting.
 
 ## 07_dmesg_kernel_messages.png
 
-![07_dmesg_kernel_messages](./07_dmesg_kernel_messages.png)
+![07_dmesg_kernel_messages](Screenshots/07_dmesg_kernel_messages.png)
 
 This screenshot shows kernel messages.
 
@@ -217,7 +217,7 @@ Kernel messages help identify hardware and driver issues.
 
 ## 08_failed_services.png
 
-![08_failed_services](./08_failed_services.png)
+![08_failed_services](Screenshots/08_failed_services.png)
 
 This screenshot shows failed services.
 
@@ -228,7 +228,7 @@ Failed services often indicate root cause of boot problems.
 
 ## 09_boot_time_analysis.png
 
-![09_boot_time_analysis](./09_boot_time_analysis.png)
+![09_boot_time_analysis](Screenshots/09_boot_time_analysis.png)
 
 This screenshot shows boot time analysis.
 
@@ -239,7 +239,7 @@ Boot timing helps identify slow services.
 
 ## 10_boot_critical_chain.png
 
-![10_boot_critical_chain](./10_boot_critical_chain.png)
+![10_boot_critical_chain](Screenshots/10_boot_critical_chain.png)
 
 This screenshot shows boot dependency chain.
 
@@ -250,7 +250,7 @@ Critical chain identifies services delaying startup.
 
 ## 11_default_boot_target.png
 
-![11_default_boot_target](./11_default_boot_target.png)
+![11_default_boot_target](Screenshots/11_default_boot_target.png)
 
 This screenshot shows default boot target.
 
@@ -261,7 +261,7 @@ Boot targets define system startup mode.
 
 ## 12_grub_configuration.png
 
-![12_grub_configuration](./12_grub_configuration.png)
+![12_grub_configuration](Screenshots/12_grub_configuration.png)
 
 This screenshot shows GRUB configuration.
 
@@ -272,7 +272,7 @@ GRUB controls kernel selection and boot behavior.
 
 ## 13_installed_kernels.png
 
-![13_installed_kernels](./13_installed_kernels.png)
+![13_installed_kernels](Screenshots/13_installed_kernels.png)
 
 This screenshot shows installed kernels.
 
@@ -283,7 +283,7 @@ Multiple kernels provide fallback recovery.
 
 ## 14_boot_parameters.png
 
-![14_boot_parameters](./14_boot_parameters.png)
+![14_boot_parameters](Screenshots/14_boot_parameters.png)
 
 This screenshot shows boot parameters.
 
@@ -294,7 +294,7 @@ Boot parameters control kernel behavior.
 
 ## 15_kernel_version.png
 
-![15_kernel_version](./15_kernel_version.png)
+![15_kernel_version](Screenshots/15_kernel_version.png)
 
 This screenshot shows running kernel version.
 
