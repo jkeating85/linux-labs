@@ -195,10 +195,6 @@ Displays:
 
 ---
 
-# Screenshots
-
----
-
 ### Screenshot 01 — Lab 45 Folder Structure
 
 ![01_lab_45_folder_structure](Screenshots/01_lab_45_folder_structure.png)
