@@ -138,141 +138,168 @@ Displays currently running kernel version.
 
 # Screenshots
 
----
+## 01_lab_46_folder_structure.png
 
-## 01_boot_logs.png
+![01_lab_46_folder_structure](01_lab_46_folder_structure.png)
 
-This screenshot shows system boot logs using journalctl. These logs provide insight into system startup behavior and identify boot-related issues.
-
-**Professional Explanation:**  
-Linux administrators use journalctl to diagnose boot failures, kernel panics, and service issues during system startup.
-
----
-
-## 02_boot_errors.png
-
-This screenshot displays boot error messages.
+This screenshot shows the lab folder structure.
 
 **Professional Explanation:**  
-Errors shown here help identify services or drivers that failed during boot.
+Organized folder structures improve troubleshooting workflows and documentation clarity.
 
 ---
 
-## 03_system_errors.png
+## 02_lab_46_directory_verification.png
 
-This screenshot displays system-level errors.
+![02_lab_46_directory_verification](02_lab_46_directory_verification.png)
+
+This screenshot verifies working directory.
 
 **Professional Explanation:**  
-System errors help identify configuration issues and failed dependencies.
+Confirming directories prevents executing commands in incorrect locations.
 
 ---
 
-## 04_kernel_messages.png
+## 03_kernel_version_check.png
+
+![03_kernel_version_check](03_kernel_version_check.png)
+
+This screenshot shows kernel version.
+
+**Professional Explanation:**  
+Kernel version validation helps confirm compatibility and troubleshooting scope.
+
+---
+
+## 04_boot_directory_kernels.png
+
+![04_boot_directory_kernels](04_boot_directory_kernels.png)
+
+This screenshot shows kernel files in /boot.
+
+**Professional Explanation:**  
+Multiple kernels allow rollback and recovery during boot failures.
+
+---
+
+## 05_boot_logs_journalctl.png
+
+![05_boot_logs_journalctl](05_boot_logs_journalctl.png)
+
+This screenshot shows system boot logs.
+
+**Professional Explanation:**  
+Boot logs help identify failures during system startup.
+
+---
+
+## 06_boot_errors_filtered.png
+
+![06_boot_errors_filtered](06_boot_errors_filtered.png)
+
+This screenshot shows filtered boot errors.
+
+**Professional Explanation:**  
+Filtering errors speeds troubleshooting.
+
+---
+
+## 07_dmesg_kernel_messages.png
+
+![07_dmesg_kernel_messages](07_dmesg_kernel_messages.png)
 
 This screenshot shows kernel messages.
 
 **Professional Explanation:**  
-Kernel messages help diagnose hardware and driver issues.
-
----
-
-## 05_boot_warnings.png
-
-This screenshot displays boot warnings.
-
-**Professional Explanation:**  
-Warnings may indicate potential system instability or configuration issues.
-
----
-
-## 06_boot_services.png
-
-This screenshot displays services during boot.
-
-**Professional Explanation:**  
-Understanding service order helps troubleshoot dependency failures.
-
----
-
-## 07_failed_services.png
-
-This screenshot shows failed services.
-
-**Professional Explanation:**  
-Failed services often indicate root causes of boot failures.
+Kernel messages help identify hardware and driver issues.
 
 ---
 
 ## 08_failed_services.png
 
-This screenshot shows SSSD and fwupd failures.
+![08_failed_services](08_failed_services.png)
+
+This screenshot shows failed services.
 
 **Professional Explanation:**  
-This demonstrates real-world troubleshooting scenarios where authentication or firmware services fail.
+Failed services often indicate root cause of boot problems.
 
 ---
 
 ## 09_boot_time_analysis.png
 
-This screenshot shows system boot time analysis.
+![09_boot_time_analysis](09_boot_time_analysis.png)
+
+This screenshot shows boot time analysis.
 
 **Professional Explanation:**  
-Boot timing helps identify slow system startup issues.
+Boot timing helps identify slow services.
 
 ---
 
 ## 10_boot_critical_chain.png
 
+![10_boot_critical_chain](10_boot_critical_chain.png)
+
 This screenshot shows boot dependency chain.
 
 **Professional Explanation:**  
-Critical chain identifies services delaying system boot.
+Critical chain identifies services delaying startup.
 
 ---
 
 ## 11_default_boot_target.png
 
+![11_default_boot_target](11_default_boot_target.png)
+
 This screenshot shows default boot target.
 
 **Professional Explanation:**  
-This confirms system boot mode configuration.
+Boot targets define system startup mode.
 
 ---
 
 ## 12_grub_configuration.png
 
-This screenshot shows GRUB bootloader configuration.
+![12_grub_configuration](12_grub_configuration.png)
+
+This screenshot shows GRUB configuration.
 
 **Professional Explanation:**  
-GRUB configuration controls kernel selection and boot behavior.
+GRUB controls kernel selection and boot behavior.
 
 ---
 
 ## 13_installed_kernels.png
 
+![13_installed_kernels](13_installed_kernels.png)
+
 This screenshot shows installed kernels.
 
 **Professional Explanation:**  
-Multiple kernels allow fallback recovery during kernel failures.
+Multiple kernels provide fallback recovery.
 
 ---
 
 ## 14_boot_parameters.png
 
-This screenshot displays boot parameters.
+![14_boot_parameters](14_boot_parameters.png)
+
+This screenshot shows boot parameters.
 
 **Professional Explanation:**  
-Boot parameters control kernel behavior and troubleshooting options.
+Boot parameters control kernel behavior.
 
 ---
 
 ## 15_kernel_version.png
 
+![15_kernel_version](15_kernel_version.png)
+
 This screenshot shows running kernel version.
 
 **Professional Explanation:**  
-Verifying kernel version ensures system booted correctly.
-
+Verifying kernel version confirms successful boot.
 ---
 
 # Key Concepts
