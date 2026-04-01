@@ -154,56 +154,89 @@ The objective of this lab was to install, configure, test, and validate both NFS
 ## Screenshots
 
 ### 01_apt_update_dns_error.png
+![01_apt_update_dns_error.png](Screenshots/01_apt_update_dns_error.png)
+
 This screenshot shows package management failing during `apt update` because the system cannot resolve repository hostnames such as `us.archive.ubuntu.com`, `security.ubuntu.com`, and `pkgs.k8s.io`. This indicates a DNS or network name resolution problem rather than a package syntax issue. In a real Linux administration environment, this is an important troubleshooting step because package installation, updates, and service deployment all depend on working network connectivity and functional DNS resolution.
 
 ### 02_network_interface_and_ping_failure.png
+![02_network_interface_and_ping_failure.png](Screenshots/02_network_interface_and_ping_failure.png)
+
 This screenshot shows that the system has active network interfaces, but outbound connectivity is still failing. The `ip a` output confirms the presence of interfaces and assigned addresses, while the failed ping to `8.8.8.8` shows that this is not only a DNS problem but also a broader network connectivity issue. In real-world Linux troubleshooting, this helps separate hostname resolution problems from full network path failures and points the administrator toward adapter, routing, or VirtualBox network configuration issues.
 
 ### 03_route_table_missing_default_gateway.png
+![03_route_table_missing_default_gateway.png](Screenshots/03_route_table_missing_default_gateway.png)
+
 This screenshot shows that the system has an active network interface, but the routing table is incomplete. The `ip route` output only lists local bridge and container networks and does not show a default gateway, which explains why external connectivity fails. In real-world Linux troubleshooting, this means the system can see local interfaces but does not know where to send traffic for the internet or external package repositories.
 
 ### 04_network_restored_with_default_route.png
+![04_network_restored_with_default_route.png](Screenshots/04_network_restored_with_default_route.png)
+
 This screenshot shows successful recovery of network connectivity. The routing table now includes a default gateway, which allows the system to send traffic outside the local host and bridge networks, and the successful ping to `8.8.8.8` confirms outbound connectivity is working again. In a real Linux environment, restoring the default route is a key troubleshooting milestone because package installation, updates, remote mounts, and service communication all depend on proper routing.
 
 ### 05_apt_repository_time_sync_error.png
+![05_apt_repository_time_sync_error.png](Screenshots/05_apt_repository_time_sync_error.png)
+
 This screenshot shows that network connectivity has been restored, but package installation is still failing because the repository metadata is considered invalid based on system time. The messages stating that the release files are “not valid yet” indicate a clock or time synchronization problem, which prevents APT from trusting the repository data. In a real Linux environment, correct system time is critical because package validation, certificates, authentication, and secure communications all depend on accurate time settings.
 
 ### 06_timedatectl_unsynchronized_clock.png
+![06_timedatectl_unsynchronized_clock.png](Screenshots/06_timedatectl_unsynchronized_clock.png)
+
 This screenshot confirms that the system’s date, time zone, and clock settings are visible, but the clock is not synchronized with a time source. The `timedatectl` output shows `System clock synchronized: no`, which explains why APT reports repository metadata as “not valid yet.” In real-world Linux administration, unsynchronized system time can break package installation, certificate validation, authentication, and other security-sensitive services.
 
 ### 07_manual_time_correction.png
+![07_manual_time_correction.png](Screenshots/07_manual_time_correction.png)
+
 This screenshot shows the system clock being manually corrected to the current local date and time after repository validation failed because the clock was out of sync. Correcting the clock allows Linux to properly evaluate package metadata timestamps. In real-world administration, accurate system time is essential for package management, certificate validation, logging accuracy, and secure service communication.
 
 ### 08_apt_lock_file_blocking_update.png
+![08_apt_lock_file_blocking_update.png](Screenshots/08_apt_lock_file_blocking_update.png)
+
 This screenshot shows that package management is now being blocked by an APT lock file rather than the earlier network or time issues. The message indicates another `apt-get` process is still holding the package database lock, which prevents concurrent package operations. In real-world Linux administration, this is an important safeguard because it protects the package database from corruption during simultaneous package operations.
 
 ### 09_apt_update_success_after_lock_cleanup.png
+![09_apt_update_success_after_lock_cleanup.png](Screenshots/09_apt_update_success_after_lock_cleanup.png)
+
 This screenshot shows successful recovery of APT after clearing stale lock files and revalidating the package database. Once the inactive lock files were removed and `dpkg --configure -a` completed, package operations resumed normally and `apt update` finished successfully. In a real Linux environment, this demonstrates proper package manager recovery after interrupted update activity and confirms the system is ready for package installation.
 
 ### 10_nfs_and_samba_packages_installed.png
+![10_nfs_and_samba_packages_installed.png](Screenshots/10_nfs_and_samba_packages_installed.png)
+
 This screenshot confirms successful installation of the packages required for the lab, including NFS server/client components and Samba/SMB support utilities. The output shows package setup, service symlink creation, configuration file generation, and trigger processing completing without fatal errors. In a real Linux environment, this step prepares the system to host and mount both NFS and SMB network shares for cross-system file access.
 
 ### 11_shared_directories_and_test_files_created.png
+![11_shared_directories_and_test_files_created.png](Screenshots/11_shared_directories_and_test_files_created.png)
+
 This screenshot confirms that the NFS and SMB share directories were created successfully under `/srv`, given broad test permissions, and populated with sample files for validation. The `ls -ld` output verifies the directory permissions and ownership, while the `ls -l` output confirms that each share contains its expected test file. In a real Linux environment, this step prepares the underlying storage paths that will later be exported through NFS and Samba for remote access testing.
 
 ### 12_nfs_export_configured_and_reloaded.png
+![12_nfs_export_configured_and_reloaded.png](Screenshots/12_nfs_export_configured_and_reloaded.png)
+
 This screenshot confirms that the NFS export entry was added to `/etc/exports`, reloaded successfully with `exportfs -rav`, and verified with `exportfs -v`. The output shows `/srv/nfs_share` is now exported with the intended options, allowing clients to mount the share. In a real Linux environment, this step is how administrators publish a filesystem over NFS and confirm the export is active before client-side mount testing.
 
 ### 13_nfs_share_mounted_and_verified.png
+![13_nfs_share_mounted_and_verified.png](Screenshots/13_nfs_share_mounted_and_verified.png)
+
 This screenshot confirms that the NFS share was successfully mounted locally to `/mnt/nfs_client` and recognized by the system as an NFS filesystem. The `mount | grep nfs` output verifies the active NFS mount, while the directory listing and file contents confirm that the exported share is accessible through the client mount point. In a real Linux environment, this validates both server-side export configuration and client-side mount functionality.
 
 ### 14_samba_share_config_validated.png
+![14_samba_share_config_validated.png](Screenshots/14_samba_share_config_validated.png)
+
 This screenshot confirms that the Samba share definition was added to `smb.conf` and successfully validated with `testparm`. The output shows Samba loaded the configuration file and accepted the new share settings, which confirms the syntax is usable. In a real Linux environment, validating Samba configuration before restarting services helps prevent service startup failures caused by configuration mistakes.
 
 ### 15_samba_service_running.png
+![15_samba_service_running.png](Screenshots/15_samba_service_running.png)
+
 This screenshot confirms that the Samba service `smbd` was restarted, enabled at boot, and is currently active and running. The `systemctl status` output shows the service loaded successfully and is ready to serve SMB connections. In a real Linux environment, confirming the daemon is active is a critical validation step before testing client access to the shared directory.
 
 ### 16_smb_share_mounted_and_verified.png
+![16_smb_share_mounted_and_verified.png](Screenshots/16_smb_share_mounted_and_verified.png)
+
 This screenshot confirms that the SMB share was successfully mounted locally to `/mnt/smb_client` using the CIFS protocol with guest access. The `mount | grep cifs` output verifies the active SMB mount, while the directory listing and file contents confirm that the shared file is accessible through the client mount point. In a real Linux environment, this validates both Samba server configuration and client-side SMB access.
 
 ### 17_network_mounts_unmounted_and_cleaned_up.png
-This screenshot confirms that the temporary NFS and SMB client mounts were successfully unmounted from `/mnt/nfs_client` and `/mnt/smb_client`. Verifying that no active test mounts remain is an important cleanup step because it shows the administrator can both mount and safely remove network filesystems after validation. In a real Linux environment, proper unmounting helps prevent stale mounts, resource issues, and confusion during later troubleshooting.
+![17_network_mounts_unmounted_and_cleaned_up.png](Screenshots/17_network_mounts_unmounted_and_cleaned_up.png)
 
+This screenshot confirms that the temporary NFS and SMB client mounts were successfully unmounted from `/mnt/nfs_client` and `/mnt/smb_client`. Verifying that no active test mounts remain is an important cleanup step because it shows the administrator can both mount and safely remove network filesystems after validation. In a real Linux environment, proper unmounting helps prevent stale mounts, resource issues, and confusion during later troubleshooting.
 ## Key Concepts
 - NFS is a Linux and Unix focused network file sharing protocol commonly used for server-to-server file access.
 - SMB/CIFS is a network file sharing protocol commonly used for Windows interoperability, but it is also widely supported on Linux through Samba.
