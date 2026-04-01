@@ -18,13 +18,16 @@ The objective of this lab was to install, configure, test, and validate both NFS
 
 ## Commands Used
 
+### Lab Directory Verification
     cd ~/IT_Labs/02_Linux+/47_NFS_and_SMB_Network_Mounts
     pwd
     ls
 
+### Package Installation and Initial Troubleshooting
     sudo apt update
     sudo apt install -y nfs-kernel-server nfs-common samba cifs-utils
 
+### Network Troubleshooting
     ip a
     ping -c 4 8.8.8.8
     ping -c 4 google.com
@@ -34,18 +37,21 @@ The objective of this lab was to install, configure, test, and validate both NFS
     sudo nmcli connection down netplan-enp0s3
     sudo nmcli connection up netplan-enp0s3
 
+### Time Troubleshooting
     date
     timedatectl
     sudo timedatectl set-ntp true
     sudo date -s "2026-03-31 19:19:00"
     sudo date -s "2026-04-01 05:30:00"
 
+### APT Lock Cleanup
     ps -p 127469 -f
     sudo rm -f /var/lib/apt/lists/lock
     sudo rm -f /var/cache/apt/archives/lock
     sudo rm -f /var/lib/dpkg/lock-frontend
     sudo dpkg --configure -a
 
+### NFS and SMB Share Directory Creation
     sudo mkdir -p /srv/nfs_share
     sudo mkdir -p /srv/smb_share
     sudo chmod 777 /srv/nfs_share
@@ -55,16 +61,19 @@ The objective of this lab was to install, configure, test, and validate both NFS
     ls -ld /srv/nfs_share /srv/smb_share
     ls -l /srv/nfs_share /srv/smb_share
 
+### NFS Export Configuration
     echo "/srv/nfs_share *(rw,sync,no_subtree_check,no_root_squash)" | sudo tee -a /etc/exports
     sudo exportfs -rav
     sudo exportfs -v
 
+### NFS Client Mount Testing
     sudo mkdir -p /mnt/nfs_client
     sudo mount -t nfs localhost:/srv/nfs_share /mnt/nfs_client
     mount | grep nfs
     ls -l /mnt/nfs_client
     cat /mnt/nfs_client/nfs_test.txt
 
+### Samba Configuration
     sudo cp /etc/samba/smb.conf /etc/samba/smb.conf.bak
     sudo bash -c 'cat >> /etc/samba/smb.conf <<EOF
 
@@ -77,21 +86,130 @@ The objective of this lab was to install, configure, test, and validate both NFS
     EOF'
     sudo testparm
 
+### Samba Service Validation
     sudo systemctl restart smbd
     sudo systemctl enable smbd
     sudo systemctl status smbd --no-pager
 
+### SMB Client Mount Testing
     sudo mkdir -p /mnt/smb_client
     sudo mount -t cifs //localhost/smbshare /mnt/smb_client -o guest
     mount | grep cifs
     ls -l /mnt/smb_client
     cat /mnt/smb_client/smb_test.txt
 
+### Cleanup
     sudo umount /mnt/nfs_client
     sudo umount /mnt/smb_client
     mount | grep -E 'nfs|cifs'
     mount | grep /mnt
 
+## Command Breakdown
+
+### Basic Navigation Commands
+- `cd ~/IT_Labs/02_Linux+/47_NFS_and_SMB_Network_Mounts` changes into the Lab 47 working directory.
+- `pwd` prints the full path of the current working directory.
+- `ls` lists the files and folders in the current directory.
+
+### Package Management Commands
+- `sudo apt update` refreshes the package index from the configured repositories.
+- `sudo apt install -y nfs-kernel-server nfs-common samba cifs-utils` installs the NFS server package, NFS client tools, Samba server package, and CIFS utilities.  
+  - `-y` automatically answers yes to installation prompts.
+
+### Network Troubleshooting Commands
+- `ip a` displays all network interfaces and their IP addressing information.
+- `ping -c 4 8.8.8.8` tests basic network connectivity by sending 4 ICMP echo requests to Google DNS.  
+  - `-c 4` tells ping to send 4 packets and then stop.
+- `ping -c 4 google.com` tests DNS name resolution and network connectivity together.
+- `ip route` displays the system routing table, including the default gateway if one exists.
+- `nmcli device status` shows the current state of network devices managed by NetworkManager.
+- `sudo systemctl restart NetworkManager` restarts the NetworkManager service.
+- `sudo nmcli connection down netplan-enp0s3` disables the active network connection profile.
+- `sudo nmcli connection up netplan-enp0s3` re-enables the same network connection profile.
+
+### Time Troubleshooting Commands
+- `date` displays the current system date and time.
+- `timedatectl` shows detailed time, time zone, and synchronization information.
+- `sudo timedatectl set-ntp true` enables NTP-based time synchronization.
+- `sudo date -s "2026-03-31 19:19:00"` manually sets the system date and time.
+- `sudo date -s "2026-04-01 05:30:00"` manually moved the clock forward further so repository metadata would be considered valid.  
+  - `-s` means set the system clock.
+
+### Package Lock Repair Commands
+- `ps -p 127469 -f` checks whether process ID 127469 is still running.  
+  - `-p` specifies the process ID.  
+  - `-f` shows full-format process details.
+- `sudo rm -f /var/lib/apt/lists/lock` removes a stale APT lock file.  
+  - `-f` forces removal without prompting.
+- `sudo rm -f /var/cache/apt/archives/lock` removes the cached package archive lock file.
+- `sudo rm -f /var/lib/dpkg/lock-frontend` removes the front-end DPKG lock file.
+- `sudo dpkg --configure -a` completes unfinished package configuration tasks.  
+  - `--configure -a` tells DPKG to configure all unpacked but unconfigured packages.
+
+### Share Directory Creation Commands
+- `sudo mkdir -p /srv/nfs_share` creates the NFS share directory.
+- `sudo mkdir -p /srv/smb_share` creates the SMB share directory.  
+  - `-p` creates parent directories if needed and does not error if the directory already exists.
+- `sudo chmod 777 /srv/nfs_share` grants full read, write, and execute permissions to everyone on the NFS share directory.
+- `sudo chmod 777 /srv/smb_share` grants full read, write, and execute permissions to everyone on the SMB share directory.  
+  - `777` means owner, group, and others all get `rwx`.
+- `echo "This is the NFS test file" | sudo tee /srv/nfs_share/nfs_test.txt` creates a sample file in the NFS share.
+- `echo "This is the SMB test file" | sudo tee /srv/smb_share/smb_test.txt` creates a sample file in the SMB share.
+- `ls -ld /srv/nfs_share /srv/smb_share` shows detailed information about the share directories themselves.  
+  - `-l` means long listing format.  
+  - `-d` means show directory entries instead of their contents.
+- `ls -l /srv/nfs_share /srv/smb_share` shows the files inside both share directories.
+
+### NFS Export Commands
+- `echo "/srv/nfs_share *(rw,sync,no_subtree_check,no_root_squash)" | sudo tee -a /etc/exports` adds the NFS export definition to `/etc/exports`.  
+  - `*` allows all hosts for this lab test.  
+  - `rw` allows read and write access.  
+  - `sync` forces synchronous writes.  
+  - `no_subtree_check` disables subtree verification.  
+  - `no_root_squash` allows remote root users to keep root privileges for the lab.  
+  - `-a` appends the line instead of overwriting the file.
+- `sudo exportfs -rav` reloads and re-exports all NFS shares verbosely.  
+  - `-r` re-exports all directories.  
+  - `-a` applies to all exports.  
+  - `-v` enables verbose output.
+- `sudo exportfs -v` displays the active NFS export configuration in detail.
+
+### NFS Mount Testing Commands
+- `sudo mkdir -p /mnt/nfs_client` creates the local NFS client mount point.
+- `sudo mount -t nfs localhost:/srv/nfs_share /mnt/nfs_client` mounts the NFS share locally.  
+  - `-t nfs` tells mount to use the NFS filesystem type.
+- `mount | grep nfs` filters the mount list to show active NFS mounts.
+- `ls -l /mnt/nfs_client` lists the contents of the mounted NFS share.
+- `cat /mnt/nfs_client/nfs_test.txt` displays the NFS test file contents.
+
+### Samba Configuration Commands
+- `sudo cp /etc/samba/smb.conf /etc/samba/smb.conf.bak` creates a backup of the Samba configuration file.
+- `sudo bash -c 'cat >> /etc/samba/smb.conf <<EOF ... EOF'` appends a new Samba share definition to `smb.conf`.  
+  - `>>` appends text to the file.  
+  - `EOF` is a heredoc marker used to paste multiple lines into the file at once.
+- `sudo testparm` checks the Samba configuration for syntax problems before restarting the service.
+
+### Samba Service Commands
+- `sudo systemctl restart smbd` restarts the Samba SMB daemon.
+- `sudo systemctl enable smbd` enables the Samba SMB daemon to start automatically at boot.
+- `sudo systemctl status smbd --no-pager` displays the service status without opening the pager.  
+  - `--no-pager` keeps the output directly in the terminal.
+
+### SMB Mount Testing Commands
+- `sudo mkdir -p /mnt/smb_client` creates the local SMB client mount point.
+- `sudo mount -t cifs //localhost/smbshare /mnt/smb_client -o guest` mounts the Samba share locally using CIFS guest access.  
+  - `-t cifs` tells mount to use the CIFS/SMB filesystem type.  
+  - `-o guest` uses guest authentication with no username or password.
+- `mount | grep cifs` filters the mount list to show active CIFS mounts.
+- `ls -l /mnt/smb_client` lists the contents of the mounted SMB share.
+- `cat /mnt/smb_client/smb_test.txt` displays the SMB test file contents.
+
+### Cleanup Commands
+- `sudo umount /mnt/nfs_client` unmounts the NFS client mount.
+- `sudo umount /mnt/smb_client` unmounts the SMB client mount.
+- `mount | grep -E 'nfs|cifs'` checks whether any NFS or CIFS mounts are still active.  
+  - `-E` enables extended regular expressions.
+- `mount | grep /mnt` checks whether any temporary mounts remain under `/mnt`.
 ## Command Breakdown
 - `cd` = changes into a directory.
 - `pwd` = prints the current working directory.
