@@ -162,7 +162,11 @@ Confirming directories prevents executing commands in incorrect locations.
 
 ## 03_kernel_version_check.png
 
+<<<<<<< HEAD
 ![03_kernel_version_check](Screenshots/03_kernel_version_check.png)
+=======
+![03_kernel_version_check](Screenshots/03_kernal_version_check.png)
+>>>>>>> b320fac5900a13cbff027be567423cc058e499f9
 
 This screenshot shows kernel version.
 
@@ -173,7 +177,11 @@ Kernel version validation helps confirm compatibility and troubleshooting scope.
 
 ## 04_boot_directory_kernels.png
 
+<<<<<<< HEAD
 ![04_boot_directory_kernels](Screenshots/04_boot_directory_kernels.png)
+=======
+![04_boot_directory_kernels](Screenshots/04_boot_directory_kernals.png)
+>>>>>>> b320fac5900a13cbff027be567423cc058e499f9
 
 This screenshot shows kernel files in /boot.
 
